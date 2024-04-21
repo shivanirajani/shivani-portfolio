@@ -1,4 +1,4 @@
-
+import { FaRegEnvelope } from 'react-icons/fa';
 
 const Contact = () => {
   return (
@@ -40,7 +40,7 @@ const Contact = () => {
 
 
           <button className="form-btn" type="submit" data-form-btn>
-            <ion-icon name="paper-plane"></ion-icon>
+          <FaRegEnvelope />
             <span>Enviar</span>
           </button>
 
