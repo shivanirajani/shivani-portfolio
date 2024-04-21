@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "title": "TICWAY",
+      "category": "Desarrollo Web",
+      "image": "images/project-1.png",
+      "url": "https://beta.ticway.com/"
+    },
+    {
+      "id": 2,
+      "title": "Zen Blend",
+      "category": "Desarrollo Web",
+      "image": "images/matcha.png",
+      "url": "https://zen-blend.vercel.app/"
+    }
+    
+  ]
+  
