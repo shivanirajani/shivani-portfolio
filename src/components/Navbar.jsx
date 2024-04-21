@@ -11,7 +11,7 @@ const Navbar = () => {
       </li>
 
       <li className="navbar-item">
-        <Link to="#resume" className="navbar-link" data-nav-link>
+        <Link to="/resume" className="navbar-link" data-nav-link>
           Trayectoria
         </Link>
       </li>
