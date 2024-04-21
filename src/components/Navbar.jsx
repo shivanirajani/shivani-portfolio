@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar">
     <ul className="navbar-list">
       <li className="navbar-item">
-        <Link to="#" className="navbar-link" data-nav-link>
+        <Link to="/" className="navbar-link" data-nav-link>
           Sobre Mi
         </Link>
       </li>
@@ -17,14 +17,14 @@ const Navbar = () => {
       </li>
 
       <li className="navbar-item">
-        <Link to="#portfolio" className="navbar-link" data-nav-link>
+        <Link to="/portfolio" className="navbar-link" data-nav-link>
           Portfolio
         </Link>
       </li>
 
 
       <li className="navbar-item">
-        <Link to="#contact" className="navbar-link" data-nav-link>
+        <Link to="/contact" className="navbar-link" data-nav-link>
           Contacto
         </Link>
       </li>
