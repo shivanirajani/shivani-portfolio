@@ -67,6 +67,12 @@ const Resume = () => {
         <ol className="timeline-list">
 
         <TimelineItem
+            work= "Introduction to Generative AI"
+            place= "Google Cloud Skills Boost "
+            date="Abril 2024"
+          />  
+
+        <TimelineItem
             work= "Front End Development Libraries"
             place= "freeCodeCamp"
             date="Abril 2024"
