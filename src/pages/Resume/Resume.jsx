@@ -70,6 +70,7 @@ const Resume = () => {
             work= " PHP for Beginners"
             place= "Great Learning Academy"
             date="Abril 2024"
+            description=" PHP"
           />     
 
         <TimelineItem
