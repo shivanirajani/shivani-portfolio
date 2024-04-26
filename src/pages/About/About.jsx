@@ -58,7 +58,7 @@ const About = () => {
           ¡Hola! Soy Shivani, estudiante de tercer año en la Universidad de Newcastle, actualmente realizando mis prácticas. Me interesa el desarrollo web porque me permite crear experiencias digitales funcionales y visualmente impresionantes. Mi interés en el desarrollo web front-end surgió cuando trabajé en un proyecto universitario, que era crear una página web de intercambio de libros, con el objetivo de garantizar una educación inclusiva y promover oportunidades de aprendizaje permanente para todos.
         </p>
         <p>
-          Mis habilidades giran en torno a HTML, CSS, JavaScript, React y Next.js. Mi objetivo es explorar aún más el desarrollo web y hacer que las experiencias digitales sean accesibles y atractivas para todos. Me gustaría aprender más sobre tecnologías como Vue.js, Three.js, y también estoy interesada en adentrarme en el mundo del desarrollo backend. Me gustaría aprender Figma.
+          Mis habilidades giran en torno a HTML, CSS, JavaScript, React y Next.js. Mi objetivo es explorar aún más el desarrollo web y hacer que las experiencias digitales sean accesibles y atractivas para todos. Me gustaría aprender más sobre tecnologías como Vue.js, Three.js, y también estoy interesada en adentrarme en el mundo del desarrollo backend y aprender PHP. Me gustaría aprender Figma.
         </p>
         <p>
           Me encantaría colaborar con profesionales de la industria y equipos para adquirir experiencia práctica y contribuir a proyectos significativos. Ya sea que estén buscando personas en prácticas para unirse a su equipo o buscando nuevas perspectivas en un proyecto de desarrollo front-end, estoy aquí para aprender, para ofrecer mis conocimientos y trabajar juntos.
