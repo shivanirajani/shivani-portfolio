@@ -1,9 +1,10 @@
 [
     {
       "id": 1,
-      "title": "TICWAY: Muy Pronto Disponible",
+      "title": "TICWAY",
       "category": "Desarrollo Web",
-      "image": "images/project-1.png"
+      "image": "images/project-1.png",
+      "url": "https://beta.ticway.com/"
     
     },
     {
