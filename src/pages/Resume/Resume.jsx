@@ -21,7 +21,6 @@ const Resume = () => {
             degree="Ciencias de la Computación"
             place="Universidad de Newcastle"
             date="2021 — Presente"
-            grade= "Calificación Upper Second Class (2:1)"
             description="React, Python, MongoDB, SQL, Java"
           />
           <TimelineItem
