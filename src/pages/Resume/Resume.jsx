@@ -41,10 +41,16 @@ const Resume = () => {
           <h3 className="h3">Experiencia Laboral</h3>
         </div>
         <ol className="timeline-list">
+        <TimelineItem
+            work="Desarrollador Frontend"
+            place="Lãberit"
+            date="Junio 2024 — Agosto 2024"
+            description="Angular, Figma, Python Flask, MySQL, SCSS, HTML, Javascript"
+          />
           <TimelineItem
             work="Consultor & Desarrollador de Aplicaciones"
             place="TICWAY"
-            date="Septiembre 2023 — Presente"
+            date="Septiembre 2023 — Julio 2024"
             description="React, Next.JS, Microsoft SQL Server, PowerBI, Python"
           />
           <TimelineItem
