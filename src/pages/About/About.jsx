@@ -50,34 +50,32 @@ const About = () => {
   return (
     <article className="about active" data-page="about">
       <header>
-        <h2 className="h2 article-title">Sobre Mi</h2>
+        <h2 className="h2 article-title">About Me</h2>
       </header>
       
       <section className="about-text">
         <p>
-          ¡Hola! Soy Shivani, estudiante de tercer año en la Universidad de Newcastle, actualmente realizando mis prácticas. Me interesa el desarrollo web porque me permite crear experiencias digitales funcionales y visualmente impresionantes. Mi interés en el desarrollo web front-end surgió cuando trabajé en un proyecto universitario, que era crear una página web de intercambio de libros, con el objetivo de garantizar una educación inclusiva y promover oportunidades de aprendizaje permanente para todos.
+          Hello! I&apos;m Shivani, a final-year student at Newcastle University, having completed my placement year at two tech companies in Spain. I am interested in web development because it allows me to create functional and visually stunning digital experiences. My interest in front-end web development emerged when I worked on a university project to create a book exchange website, aimed at ensuring inclusive education and promoting lifelong learning opportunities for all.
         </p>
         <p>
-          Mis habilidades giran en torno a HTML, CSS, JavaScript, React y Next.js. Mi objetivo es explorar aún más el desarrollo web y hacer que las experiencias digitales sean accesibles y atractivas para todos. Me gustaría aprender más sobre tecnologías como Vue.js, Three.js, y también estoy interesada en adentrarme en el mundo del desarrollo backend y aprender PHP. Me gustaría aprender Figma.
+          My skills revolve around HTML, CSS, JavaScript, React, and Next.js. My goal is to further explore web development and make digital experiences accessible and engaging for everyone. I would like to learn more about technologies such as Vue.js, Three.js, and I am also interested in venturing into back-end development and learning PHP. Additionally, I would like to learn Figma.
         </p>
         <p>
-          Me encantaría colaborar con profesionales de la industria y equipos para adquirir experiencia práctica y contribuir a proyectos significativos. Ya sea que estén buscando personas en prácticas para unirse a su equipo o buscando nuevas perspectivas en un proyecto de desarrollo front-end, estoy aquí para aprender, para ofrecer mis conocimientos y trabajar juntos.
+          I would love to collaborate with industry professionals and teams to gain practical experience and contribute to meaningful projects. Whether you are looking for interns to join your team or seeking fresh perspectives on a front-end development project, I am here to learn, share my knowledge, and work together.
         </p>
       </section>
       
       <section className="service">
-
-  <ul className="service-list">
-    {iconsData.map((iconData) => (
-      <li key={iconData.id} className="service-item">
-        <a href={iconData.href} target="_blank">
-          <img src={iconData.icon} alt={iconData.name} title={iconData.name} />
-        </a>
-      </li>
-    ))}
-  </ul>
-</section>
-
+        <ul className="service-list">
+          {iconsData.map((iconData) => (
+            <li key={iconData.id} className="service-item">
+              <a href={iconData.href} target="_blank" rel="noopener noreferrer">
+                <img src={iconData.icon} alt={iconData.name} title={iconData.name} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
     </article>
   );
 };

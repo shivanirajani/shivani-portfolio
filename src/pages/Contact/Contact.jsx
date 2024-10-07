@@ -28,7 +28,7 @@ const Contact = () => {
   return (
     <section className="contact" data-page="contact">
       <header>
-        <h2 className="h2 article-title">Contacto</h2>
+        <h2 className="h2 article-title">Contact</h2>
       </header>
 
       <section className="mapbox" data-mapbox>
@@ -43,18 +43,18 @@ const Contact = () => {
       <section className="contact-form">
         <form className="form" onSubmit={sendEmail} ref={form}>
           <div className="input-wrapper">
-            <input type="text" name="nombre" className="form-input" placeholder="Nombre" required />
-            <input type="text" name="apellidos" className="form-input" placeholder="Apellidos" required />
-            <input type="email" name="email" className="form-input" placeholder="Correo Electrónico" required />
-            <input type="tel" name="telefono" className="form-input" placeholder="Teléfono" required />
+            <input type="text" name="nombre" className="form-input" placeholder="Name" required />
+            <input type="text" name="apellidos" className="form-input" placeholder="Surname" required />
+            <input type="email" name="email" className="form-input" placeholder="Email" required />
+            <input type="tel" name="telefono" className="form-input" placeholder="Phone Number" required />
           </div>
 
-          <textarea name="asunto" className="form-input" placeholder="Asunto" required></textarea>
-          <textarea name="mensaje" className="form-input" placeholder="Mensaje" required></textarea>
+          <textarea name="asunto" className="form-input" placeholder="Subject" required></textarea>
+          <textarea name="mensaje" className="form-input" placeholder="Message" required></textarea>
 
           <button className="form-btn" type="submit">
             <FaRegEnvelope />
-            <span>Enviar</span>
+            <span>Submit</span>
           </button>
         </form>
       </section>
