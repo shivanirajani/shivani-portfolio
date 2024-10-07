@@ -20,11 +20,11 @@ const Aside = () => {
             Shivani Bhagvanji Rajani
           </h1>
 
-          <p className="title">Estudiante De Computer Science</p>
+          <p className="title">Final Year Computer Science Student</p>
         </div>
 
         <Link to="/contact" className="info_more-btn" data-sidebar-btn>
-          <span>Contacto</span>
+          <span>Contact</span>
           <GiClawSlashes />
         </Link>
       </div>
@@ -39,7 +39,7 @@ const Aside = () => {
             </div>
 
             <div className="contact-info">
-              <p className="contact-title">Correo Electrónico</p>
+              <p className="contact-title">Email</p>
 
               <a href="mailto:shivanibhagvanji@gmail.com" className="contact-link">
                 shivanibhagvanji@gmail.com
@@ -53,7 +53,7 @@ const Aside = () => {
             </div>
 
             <div className="contact-info">
-              <p className="contact-title">Teléfono</p>
+              <p className="contact-title">Phone Number</p>
 
               <a href="tel:+34671026195" className="contact-link">
                 +34 671 02 61 95
@@ -68,9 +68,9 @@ const Aside = () => {
             </div>
 
             <div className="contact-info">
-              <p className="contact-title">Dirección</p>
+              <p className="contact-title">Address</p>
 
-              <address>Las Palmas de Gran Canaria, España</address>
+              <address>Newcastle upon Tyne</address>
             </div>
           </li>
 

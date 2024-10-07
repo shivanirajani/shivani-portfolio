@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBook, FaLaptop, FaUniversity } from "react-icons/fa";
+import { FaBook, FaLaptop, FaUniversity, FaHandsHelping } from "react-icons/fa";
 import TimelineItem from './TimelineItem';
 
 const Resume = () => {
@@ -39,6 +39,12 @@ const Resume = () => {
           <h3 className="h3">Work Experience</h3>
         </div>
         <ol className="timeline-list">
+          <TimelineItem
+            work="Full Stack Developer"
+            place="Lãberit"
+            date="September 2024 — Present"
+            description="Angular, Figma, Python Flask, MySQL, SCSS, HTML, JavaScript"
+          />
           <TimelineItem
             work="Frontend Developer"
             place="Lãberit"
@@ -93,8 +99,39 @@ const Resume = () => {
           />
         </ol>
       </div>
+
+      {/* New Volunteering Section */}
+      <div className="timeline">
+        <div className="title-wrapper">
+          <div className="icon-box">
+            <FaHandsHelping />
+          </div>
+          <h3 className="h3">Volunteering</h3>
+        </div>
+        <ol className="timeline-list">
+          <TimelineItem
+            work="Peer Mentor for Computer Science"
+            place="Newcastle University"
+            date="September 2024 — Present"
+            description="Support the academic and personal development of fresher students by creating an inclusive and engaging environment. Utilise this role to positively impact their transition into university life, promoting a strong sense of community and belonging"
+          />
+       <TimelineItem
+            work="President of Bollywood Dance Society"
+            place="Newcastle University"
+            date="September 2024 — Present"
+            description={`Leading the society by overseeing and coordinating all activity\nPlanning for dance classes, workshops, performances and competitions\nDelegating and managing tasks`}
+          />
+          <TimelineItem
+            work="Secretary of Bollywood Dance Society"
+            place="Newcastle University"
+            date="September 2023 — August 2024"
+            description={`Attending committee meetings, taking and distributing minutes\n Monitoring the society email account\nGeneral administrative tasks, such as filling out risk assessments or booking rooms`}
+          />
+        </ol>
+      </div>
     </section>
   );
 };
 
 export default Resume;
+
