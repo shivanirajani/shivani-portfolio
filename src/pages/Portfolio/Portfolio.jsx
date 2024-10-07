@@ -7,7 +7,7 @@ const Portfolio = () => {
   const [filteredProjects, setFilteredProjects] = useState([]);
 
   // State to store the selected category
-  const [selectedCategory, setSelectedCategory] = useState('Todo');
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   // Load project data from projects.json
   useEffect(() => {
@@ -23,7 +23,7 @@ const Portfolio = () => {
   // Function to handle category filter selection
   const handleFilterClick = (category) => {
     setSelectedCategory(category);
-    if (category === 'Todo') {
+    if (category === 'All') {
       setFilteredProjects(projects);
     } else {
       const filtered = projects.filter(project => project.category === category);

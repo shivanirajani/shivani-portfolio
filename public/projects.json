@@ -2,7 +2,7 @@
     {
       "id": 1,
       "title": "TICWAY",
-      "category": "Desarrollo Web",
+      "category": "Web Development",
       "image": "images/project-1.png",
       "url": "https://ticway.com/"
     
@@ -10,7 +10,7 @@
     {
       "id": 2,
       "title": "Zen Blend",
-      "category": "Desarrollo Web",
+      "category": "Web Development",
       "image": "images/matcha.png",
       "url": "https://zen-blend.vercel.app/"
     }
