@@ -119,13 +119,13 @@ const Resume = () => {
             work="President of Bollywood Dance Society"
             place="Newcastle University"
             date="September 2024 — Present"
-            description={`Leading the society by overseeing and coordinating all activity\nPlanning for dance classes, workshops, performances and competitions\nDelegating and managing tasks`}
+            description={`Leading the society by overseeing and coordinating all activity. \nPlanning for dance classes, workshops, performances and competitions. \nDelegating and managing tasks`}
           />
           <TimelineItem
             work="Secretary of Bollywood Dance Society"
             place="Newcastle University"
             date="September 2023 — August 2024"
-            description={`Attending committee meetings, taking and distributing minutes\n Monitoring the society email account\nGeneral administrative tasks, such as filling out risk assessments or booking rooms`}
+            description={`Attending committee meetings, taking and distributing minutes. \n Monitoring the society email account. \nGeneral administrative tasks, such as filling out risk assessments or booking rooms`}
           />
         </ol>
       </div>
