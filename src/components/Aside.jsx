@@ -20,7 +20,7 @@ const Aside = () => {
             Shivani Bhagvanji Rajani
           </h1>
 
-          <p className="title">Final Year Computer Science Student</p>
+          <p className="title">Computer Science Student</p>
         </div>
 
         <Link to="/contact" className="info_more-btn" data-sidebar-btn>
