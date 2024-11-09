@@ -1,13 +1,12 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FaRegEye } from 'react-icons/fa';
 
 const Portfolio = () => {
-  // State to store project data and filtered projects
+  // State to store project data, filtered projects, and selected category
   const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
-
-  // State to store the selected category
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [language, setLanguage] = useState('en'); // State for language toggle
 
   // Load project data from projects.json
   useEffect(() => {
@@ -23,7 +22,7 @@ const Portfolio = () => {
   // Function to handle category filter selection
   const handleFilterClick = (category) => {
     setSelectedCategory(category);
-    if (category === 'All') {
+    if (category === 'All' || category === 'Todos') {
       setFilteredProjects(projects);
     } else {
       const filtered = projects.filter(project => project.category === category);
@@ -31,15 +30,33 @@ const Portfolio = () => {
     }
   };
 
+  // Text content for both languages
+  const content = {
+    en: {
+      title: "Portfolio",
+      categories: ["All", "Web Development", "App Development"]
+    },
+    es: {
+      title: "Portfolio",
+      categories: ["Todos", "Desarrollo Web", "Desarrollo de Apps"]
+    }
+  };
+
   return (
     <section className="portfolio" data-page="portfolio">
       <header>
-        <h2 className="h2 article-title">Portfolio</h2>
+        <h2 className="h2 article-title">{content[language].title}</h2>
+
+        {/* Language toggle */}
+        <div style={{ display: "inline-flex", gap: "10px", cursor: "pointer", fontSize: "1.5rem", marginBottom: "20px" }}>
+          <span onClick={() => setLanguage('en')} style={{ opacity: language === 'en' ? 1 : 0.5 }}>🇬🇧</span>
+          <span onClick={() => setLanguage('es')} style={{ opacity: language === 'es' ? 1 : 0.5 }}>🇪🇸</span>
+        </div>
       </header>
 
       {/* Filter buttons */}
       <ul className="filter-list">
-        {['All', 'Web Development', 'App Development'].map(category => (
+        {content[language].categories.map((category) => (
           <li className="filter-item" key={category}>
             <button
               className={category === selectedCategory ? 'active' : ''}
@@ -62,7 +79,7 @@ const Portfolio = () => {
               data-category={project.category}
               key={project.id}
             >
-             <a href={project.url}>
+              <a href={project.url}>
                 <figure className="project-img">
                   <div className="project-item-icon-box">
                     <FaRegEye />

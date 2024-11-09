@@ -16,11 +16,9 @@ const Aside = () => {
         </figure>
 
         <div className="info-content">
-          <h1 className="name" title="Shivani Bhagvanji Rajani">
-            Shivani Bhagvanji Rajani
-          </h1>
+        
 
-          <p className="title">Computer Science Student</p>
+          <p className="title">Shivani Bhagvanji Rajani</p>
         </div>
 
         <Link to="/contact" className="info_more-btn" data-sidebar-btn>
@@ -53,7 +51,7 @@ const Aside = () => {
             </div>
 
             <div className="contact-info">
-              <p className="contact-title">Phone Number</p>
+              <p className="contact-title">PHONE/TELÉFONO</p>
 
               <a href="tel:+34671026195" className="contact-link">
                 +34 671 02 61 95
@@ -68,7 +66,7 @@ const Aside = () => {
             </div>
 
             <div className="contact-info">
-              <p className="contact-title">Address</p>
+              <p className="contact-title">Address/Dirección</p>
 
               <address>Newcastle upon Tyne</address>
             </div>
