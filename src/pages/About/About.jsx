@@ -32,7 +32,7 @@ const About = () => {
     },
     es: {
       title: "Sobre mí",
-      description1: "¡Hola! Soy Shivani, una estudiante de último año en la Universidad de Newcastle, habiendo completado mi año de prácticas en dos empresas tecnológicas en España. Me interesa el desarrollo web porque me permite crear experiencias digitales funcionales y visualmente impresionantes. Mi interés en el desarrollo front-end surgió cuando trabajé en un proyecto universitario para crear un sitio web de intercambio de libros.",
+      description1: "¡Hola! Soy Shivani, estudiante de último año en la Universidad de Newcastle, habiendo completado mi año de prácticas en dos empresas tecnológicas en España. Me interesa el desarrollo web porque me permite crear experiencias digitales funcionales y visualmente impresionantes. Mi interés en el desarrollo front-end surgió cuando trabajé en un proyecto universitario para crear un sitio web de intercambio de libros.",
       description2: "Mis habilidades giran en torno a HTML, CSS, JavaScript, React y Next.js. Mi objetivo es seguir explorando el desarrollo web y hacer que las experiencias digitales sean accesibles y atractivas para todos. Me gustaría aprender más sobre tecnologías como Vue.js, Three.js, y también estoy interesada en adentrarme en el desarrollo back-end y aprender PHP. Además, me gustaría aprender Figma..",
       description3: "Me encantaría colaborar con profesionales de la industria y equipos para ganar experiencia práctica y contribuir a proyectos significativos. Ya sea que busquen becarios para unirse a su equipo o estén buscando nuevas perspectivas en un proyecto de desarrollo front-end, estoy aquí para aprender, compartir mi conocimiento y trabajar juntos."
     }
