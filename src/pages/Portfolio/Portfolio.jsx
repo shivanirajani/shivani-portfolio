@@ -34,11 +34,11 @@ const Portfolio = () => {
   const content = {
     en: {
       title: "Portfolio",
-      categories: ["All", "Web Development", "App Development"]
+      categories: ["All", "Web Development", "UI/UX Design"]
     },
     es: {
       title: "Portfolio",
-      categories: ["Todos", "Desarrollo Web", "Desarrollo de Apps"]
+      categories: ["Todos", "Desarrollo Web", "Diseño UI/UX"]
     }
   };
 
