@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaBook, FaLaptop, FaUniversity, FaHandsHelping } from "react-icons/fa";
-import { motion, AnimatePresence } from 'framer-motion';
 import TimelineItem from './TimelineItem';
 
 const Resume = () => {
@@ -67,16 +66,12 @@ const Resume = () => {
     }
   };
 
-  const fadeVariants = {
-    initial: { opacity: 0, y: 10 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-    exit: { opacity: 0, y: -10, transition: { duration: 0.3 } },
-  };
-
   return (
     <section>
       <header>
         <h2 className="h2 article-title">{content[language].title}</h2>
+        
+        {/* Language Toggle with Flags Side by Side */}
         <div style={{ fontSize: "1.5rem", cursor: "pointer", display: "flex", gap: "10px", marginBottom: "20px" }}>
           <span
             onClick={() => setLanguage("en")}
@@ -95,100 +90,89 @@ const Resume = () => {
         </div>
       </header>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={language}
-          variants={fadeVariants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-        >
-          {/* Education Section */}
-          <div className="timeline">
-            <div className="title-wrapper">
-              <div className="icon-box">
-                <FaUniversity />
-              </div>
-              <h3 className="h3">{content[language].educationTitle}</h3>
-            </div>
-            <ol className="timeline-list">
-              {content[language].timelineItems.education.map((item, index) => (
-                <TimelineItem
-                  key={index}
-                  degree={item.degree}
-                  place={item.place}
-                  date={item.date}
-                  description={item.description}
-                />
-              ))}
-            </ol>
+      {/* Education Section */}
+      <div className="timeline">
+        <div className="title-wrapper">
+          <div className="icon-box">
+            <FaUniversity />
           </div>
+          <h3 className="h3">{content[language].educationTitle}</h3>
+        </div>
+        <ol className="timeline-list">
+          {content[language].timelineItems.education.map((item, index) => (
+            <TimelineItem
+              key={index}
+              degree={item.degree}
+              place={item.place}
+              date={item.date}
+              description={item.description}
+            />
+          ))}
+        </ol>
+      </div>
 
-          {/* Work Experience Section */}
-          <div className="timeline">
-            <div className="title-wrapper">
-              <div className="icon-box">
-                <FaLaptop />
-              </div>
-              <h3 className="h3">{content[language].workTitle}</h3>
-            </div>
-            <ol className="timeline-list">
-              {content[language].timelineItems.workExperience.map((item, index) => (
-                <TimelineItem
-                  key={index}
-                  work={item.work}
-                  place={item.place}
-                  date={item.date}
-                  description={item.description}
-                />
-              ))}
-            </ol>
+      {/* Work Experience Section */}
+      <div className="timeline">
+        <div className="title-wrapper">
+          <div className="icon-box">
+            <FaLaptop />
           </div>
+          <h3 className="h3">{content[language].workTitle}</h3>
+        </div>
+        <ol className="timeline-list">
+          {content[language].timelineItems.workExperience.map((item, index) => (
+            <TimelineItem
+              key={index}
+              work={item.work}
+              place={item.place}
+              date={item.date}
+              description={item.description}
+            />
+          ))}
+        </ol>
+      </div>
 
-          {/* Courses Section */}
-          <div className="timeline">
-            <div className="title-wrapper">
-              <div className="icon-box">
-                <FaBook />
-              </div>
-              <h3 className="h3">{content[language].coursesTitle}</h3>
-            </div>
-            <ol className="timeline-list">
-              {content[language].timelineItems.courses.map((item, index) => (
-                <TimelineItem
-                  key={index}
-                  work={item.work}
-                  place={item.place}
-                  date={item.date}
-                  description={item.description}
-                />
-              ))}
-            </ol>
+      {/* Courses Section */}
+      <div className="timeline">
+        <div className="title-wrapper">
+          <div className="icon-box">
+            <FaBook />
           </div>
-          
+          <h3 className="h3">{content[language].coursesTitle}</h3>
+        </div>
+        <ol className="timeline-list">
+          {content[language].timelineItems.courses.map((item, index) => (
+            <TimelineItem
+              key={index}
+              work={item.work}
+              place={item.place}
+              date={item.date}
+              description={item.description}
+            />
+          ))}
+        </ol>
+      </div>
 
-          {/* Volunteering Section */}
-          <div className="timeline">
-            <div className="title-wrapper">
-              <div className="icon-box">
-                <FaHandsHelping />
-              </div>
-              <h3 className="h3">{content[language].volunteeringTitle}</h3>
-            </div>
-            <ol className="timeline-list">
-              {content[language].timelineItems.volunteering.map((item, index) => (
-                <TimelineItem
-                  key={index}
-                  work={item.work}
-                  place={item.place}
-                  date={item.date}
-                  description={item.description}
-                />
-              ))}
-            </ol>
+      {/* Volunteering Section */}
+      <div className="timeline">
+        <div className="title-wrapper">
+          <div className="icon-box">
+            <FaHandsHelping />
           </div>
-        </motion.div>
-      </AnimatePresence>
+          <h3 className="h3">{content[language].volunteeringTitle}</h3>
+        </div>
+        <ol className="timeline-list">
+          {content[language].timelineItems.volunteering.map((item, index) => (
+            <TimelineItem
+              key={index}
+              work={item.work}
+              place={item.place}
+              date={item.date}
+              description={item.description}
+            />
+          ))}
+        </ol>
+      </div>
     </section>
   );
 };
