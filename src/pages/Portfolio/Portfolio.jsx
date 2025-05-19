@@ -8,7 +8,7 @@ const Portfolio = () => {
   const [language, setLanguage] = useState('en');
   const [videoToShow, setVideoToShow] = useState(null);
 
-  // New state for controlling fade animation
+  // State for fade animation
   const [fade, setFade] = useState(true);
 
   useEffect(() => {
@@ -59,7 +59,6 @@ const Portfolio = () => {
       }
     }
   };
-  
 
   // Language change with fade effect
   const changeLanguage = (lang) => {
@@ -155,10 +154,22 @@ const Portfolio = () => {
                 </div>
               </div>
 
+
               <h3 className="project-title">{project.title[language]}</h3>
               <p className="project-category">
                 {content[language].categoryTranslations[project.category] || project.category}
               </p>
+
+
+              {/* Description */}
+              <p className="project-description" style={{ marginLeft: '10px' }}>{project.description[language]}</p>
+
+              {/* Tech Stack */}
+              <ul className="tech-stack-list" style={{ marginLeft: '10px' }}>
+                {project.techStack.map((tech, index) => (
+                  <li key={index} className="tech-stack-item">{tech}</li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>
@@ -184,10 +195,16 @@ const Portfolio = () => {
           position: relative;
           display: inline-block;
         }
+   
         .project-image {
           height: 150px;
           display: block;
+          border-radius: 8px;
+          object-fit: cover;
         }
+        .project-category{
+       color: #b4afe9;
+       }
         .project-icons {
           position: absolute;
           top: 10px;
@@ -234,6 +251,50 @@ const Portfolio = () => {
         .video-player {
           max-width: 90%;
           max-height: 90%;
+          border-radius: 8px;
+        }
+        .project-description {
+          margin-top: 8px;
+          font-size: 0.9rem;
+          color: white;
+        }
+        .tech-stack-list {
+          margin-top: 10px;
+          padding-left: 0;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          list-style: none;
+          font-weight: 500;
+        }
+        .tech-stack-item {
+          background-color: #b4afe9;
+          color: #fff;
+          font-size: 0.8rem;
+          padding: 3px 8px;
+          border-radius: 12px;
+        }
+        .filter-list {
+          display: flex;
+          gap: 10px;
+          list-style: none;
+          padding: 0;
+          margin-bottom: 20px;
+        }
+        .filter-item button {
+          padding: 6px 12px;
+          border: none;
+          background: transparent;
+          color: #b4afe9;
+          border-radius: 4px;
+          cursor: pointer;
+          font-weight: 600;
+          transition: background-color 0.3s ease;
+        }
+        .filter-item button.active,
+        .filter-item button:hover {
+          background-color: #b4afe9;
+          color: white;
         }
       `}</style>
     </section>
@@ -241,4 +302,3 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
-

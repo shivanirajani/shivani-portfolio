@@ -6,7 +6,12 @@
     "image": "screen/project-1.png",
     "url": "https://ticway.com/",
     "repo": "https://github.com/shivanirajani/TICWAY-WEBSITE--IT",
-    "video": null
+    "video": null,
+    "description": {
+      "en": "A corporate website providing IT solutions, designed to offer a seamless and responsive user experience while effectively showcasing services and products.",
+      "es": "Una página web corporativa que ofrece soluciones de TI, diseñada para brindar una experiencia de usuario dinámica y responsiva, mostrando eficazmente sus servicios y productos."
+    },
+    "techStack": ["Next.js", "Jest", "React", "Tailwind CSS", "JavaScript", "Vercel"]
   },
   {
     "id": 2,
@@ -15,8 +20,14 @@
     "image": "screen/matcha.png",
     "url": "https://zen-blend.vercel.app/",
     "repo": "https://github.com/shivanirajani/Zen-Blend",
-    "video": null
+    "video": null,
+    "description": {
+      "en": "A landing page for a matcha eCommerce website, designed to attract customers and showcase products effectively.",
+      "es": "Página principal de una tienda online de matcha, creada para captar clientes y mostrar los productos de forma atractiva."
+    },
+    "techStack": ["JavaScript", "HTML", "CSS", "Vercel"]
   },
+  
   {
     "id": 3,
     "title": { "en": "Dissertation Project", "es": "Trabajo Fin de Grado"},
@@ -24,7 +35,12 @@
     "image": "screen/dissertation.png",
     "url": null,
     "repo": "https://github.com/shivanirajani/dissertation",
-    "video": "screen/demo.mp4"
+    "video": "screen/demo.mp4",
+    "description": {
+      "en": "A Fashion Footprint Calculator web app designed to raise awareness of sustainable fashion by helping users make informed and responsible choices. Features interactive data visualization and user-friendly design.",
+      "es": "Una aplicación web que calcula el impacto ambiental de la moda, creada para concienciar sobre la sostenibilidad en el sector y ayudar a los usuarios a tomar decisiones responsables e informadas. Incluye visualizaciones interactivas y un diseño intuitivo."
+    },
+    "techStack": ["React","Node.js", "Express.js", "Framer Motion"]
     
   }
 ]
