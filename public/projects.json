@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "TICWAY",
+    "title": { "en": "TICWAY", "es": "TICWAY" },
     "category": "Web Development",
     "image": "screen/project-1.png",
     "url": "https://ticway.com/",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "title": "Zen Blend",
+    "title": { "en": "Zen Blend", "es": "Zen Blend" },
     "category": "Web Development",
     "image": "screen/matcha.png",
     "url": "https://zen-blend.vercel.app/",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "title": "Dissertation Project",
+    "title": { "en": "Dissertation Project", "es": "Trabajo Fin de Grado"},
     "category": "Web Development",
     "image": "screen/dissertation.png",
     "url": null,

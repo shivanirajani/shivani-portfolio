@@ -16,6 +16,9 @@ const iconsData = [
 const About = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [language, setLanguage] = useState("en");
+  
+  // New fade state to control opacity
+  const [fade, setFade] = useState(true);
 
   useEffect(() => {
     fetch('testimonials.json')
@@ -36,18 +39,30 @@ const About = () => {
       description2: "Mis habilidades giran en torno a HTML, CSS, JavaScript, React y Next.js. Mi objetivo es seguir explorando el desarrollo web y hacer que las experiencias digitales sean accesibles y atractivas para todos. Me gustaría aprender más sobre tecnologías como Vue.js, Three.js, y también estoy interesada en adentrarme en el desarrollo back-end y aprender PHP. Además, me gustaría aprender Figma..",
       description3: "Me encantaría colaborar con profesionales de la industria y equipos para ganar experiencia práctica y contribuir a proyectos significativos. Ya sea que busquen becarios para unirse a su equipo o estén buscando nuevas perspectivas en un proyecto de desarrollo front-end, estoy aquí para aprender, compartir mi conocimiento y trabajar juntos."
     }
-    
+  };
+
+  // Change language with fade effect
+  const changeLanguage = (lang) => {
+    if (lang === language) return;
+    setFade(false); // fade out
+    setTimeout(() => {
+      setLanguage(lang);
+      setFade(true); // fade in
+    }, 300); // match with CSS transition duration
   };
 
   return (
-    <article className="about active" data-page="about">
+    <article
+      className="about active"
+      data-page="about"
+      style={{ opacity: fade ? 1 : 0, transition: "opacity 0.3s ease-in-out" }}
+    >
       <header>
         <h2 className="h2 article-title">{content[language].title}</h2>
 
-        {/* Language toggle with both flags displayed */}
         <div style={{ display: "flex", gap: "10px", alignItems: "center", marginTop: "10px" }}>
           <span
-            onClick={() => setLanguage("en")}
+            onClick={() => changeLanguage("en")}
             style={{
               cursor: "pointer",
               fontSize: "1.5rem",
@@ -58,7 +73,7 @@ const About = () => {
             🇬🇧
           </span>
           <span
-            onClick={() => setLanguage("es")}
+            onClick={() => changeLanguage("es")}
             style={{
               cursor: "pointer",
               fontSize: "1.5rem",

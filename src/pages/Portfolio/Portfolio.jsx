@@ -8,6 +8,9 @@ const Portfolio = () => {
   const [language, setLanguage] = useState('en');
   const [videoToShow, setVideoToShow] = useState(null);
 
+  // New state for controlling fade animation
+  const [fade, setFade] = useState(true);
+
   useEffect(() => {
     fetch('/projects.json')
       .then(response => response.json())
@@ -31,22 +34,45 @@ const Portfolio = () => {
   const content = {
     en: {
       title: "Portfolio",
-      categories: ["All", "Web Development", "UI/UX Design"]
+      categories: ["All", "Web Development", "UI/UX Design"],
+      categoryTranslations: {
+        "Web Development": "Web Development",
+        "UI/UX Design": "UI/UX Design"
+      }
     },
     es: {
       title: "Portfolio",
-      categories: ["Todos", "Desarrollo Web", "Diseño UI/UX"]
+      categories: ["Todos", "Desarrollo Web", "Diseño UI/UX"],
+      categoryTranslations: {
+        "Web Development": "Desarrollo Web",
+        "UI/UX Design": "Diseño UI/UX"
+      }
     }
   };
 
+  // Language change with fade effect
+  const changeLanguage = (lang) => {
+    if (lang === language) return; // no change
+
+    setFade(false); // start fade-out
+    setTimeout(() => {
+      setLanguage(lang);
+      setFade(true);  // fade-in after content changed
+    }, 300); // duration matches CSS transition time
+  };
+
   return (
-    <section className="portfolio" data-page="portfolio">
+    <section
+      className="portfolio"
+      data-page="portfolio"
+      style={{ opacity: fade ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+    >
       <header>
         <h2 className="h2 article-title">{content[language].title}</h2>
 
         <div style={{ display: "inline-flex", gap: "10px", cursor: "pointer", fontSize: "1.5rem", marginBottom: "20px" }}>
-          <span onClick={() => setLanguage('en')} style={{ opacity: language === 'en' ? 1 : 0.5 }}>🇬🇧</span>
-          <span onClick={() => setLanguage('es')} style={{ opacity: language === 'es' ? 1 : 0.5 }}>🇪🇸</span>
+          <span onClick={() => changeLanguage('en')} style={{ opacity: language === 'en' ? 1 : 0.5 }}>🇬🇧</span>
+          <span onClick={() => changeLanguage('es')} style={{ opacity: language === 'es' ? 1 : 0.5 }}>🇪🇸</span>
         </div>
       </header>
 
@@ -77,13 +103,12 @@ const Portfolio = () => {
                 <figure>
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={project.title[language]}
                     loading="lazy"
                     className="project-image"
                   />
                 </figure>
 
-                {/* Icons overlay */}
                 <div className="project-icons">
                   {project.url && project.id !== 3 && (
                     <a
@@ -119,8 +144,10 @@ const Portfolio = () => {
                 </div>
               </div>
 
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-category">{project.category}</p>
+              <h3 className="project-title">{project.title[language]}</h3>
+              <p className="project-category">
+                {content[language].categoryTranslations[project.category] || project.category}
+              </p>
             </li>
           ))}
         </ul>
@@ -141,18 +168,15 @@ const Portfolio = () => {
         </div>
       )}
 
-      {/* CSS Styles */}
       <style>{`
         .project-image-container {
           position: relative;
           display: inline-block;
         }
-
         .project-image {
           height: 150px;
           display: block;
         }
-
         .project-icons {
           position: absolute;
           top: 10px;
@@ -166,12 +190,10 @@ const Portfolio = () => {
           pointer-events: none;
           transition: opacity 0.3s ease;
         }
-
         .project-image-container:hover .project-icons {
           opacity: 1;
           pointer-events: auto;
         }
-
         .icon-link,
         .icon-button {
           color: #b4afe9;
@@ -184,13 +206,11 @@ const Portfolio = () => {
           justify-content: center;
           text-decoration: none;
         }
-
         .icon-button:focus,
         .icon-link:focus {
           outline: 2px solid #b4afe9;
           outline-offset: 2px;
         }
-
         .video-modal {
           position: fixed;
           top: 0; left: 0; right: 0; bottom: 0;
@@ -200,7 +220,6 @@ const Portfolio = () => {
           align-items: center;
           z-index: 9999;
         }
-
         .video-player {
           max-width: 90%;
           max-height: 90%;
