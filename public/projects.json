@@ -11,7 +11,7 @@
       "en": "A corporate website providing IT solutions, designed to offer a seamless and responsive user experience while effectively showcasing services and products.",
       "es": "Una página web corporativa que ofrece soluciones de TI, diseñada para brindar una experiencia de usuario dinámica y responsiva, mostrando eficazmente sus servicios y productos."
     },
-    "techStack": ["Next.js", "Jest", "React", "Tailwind CSS", "JavaScript", "Vercel"]
+    "techStack": ["Next.js", "Jest", "React", "Tailwind CSS", "JavaScript", "Vercel", "ESLint"]
   },
   {
     "id": 2,
@@ -25,7 +25,7 @@
       "en": "A landing page for a matcha eCommerce website, designed to attract customers and showcase products effectively.",
       "es": "Página principal de una tienda online de matcha, creada para captar clientes y mostrar los productos de forma atractiva."
     },
-    "techStack": ["JavaScript", "HTML", "CSS", "Vercel"]
+    "techStack": ["JavaScript", "HTML", "CSS", "Vercel", "ESLint"]
   },
   
   {
@@ -40,7 +40,7 @@
       "en": "A Fashion Footprint Calculator web app designed to raise awareness of sustainable fashion by helping users make informed and responsible choices. Features interactive data visualization and user-friendly design.",
       "es": "Una aplicación web que calcula el impacto ambiental de la moda, creada para concienciar sobre la sostenibilidad en el sector y ayudar a los usuarios a tomar decisiones responsables e informadas. Incluye visualizaciones interactivas y un diseño intuitivo."
     },
-    "techStack": ["React","Node.js", "Express.js", "Framer Motion"]
+    "techStack": ["React","Node.js", "Express.js", "Chart.js", "ESLint","Framer Motion"]
     
   }
 ]
