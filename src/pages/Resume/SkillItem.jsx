@@ -14,3 +14,4 @@ const SkillItem = ({ title, value }) => {
 }
 
 export default SkillItem;
+

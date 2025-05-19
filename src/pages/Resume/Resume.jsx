@@ -165,6 +165,7 @@ const Resume = () => {
               ))}
             </ol>
           </div>
+          
 
           {/* Volunteering Section */}
           <div className="timeline">
