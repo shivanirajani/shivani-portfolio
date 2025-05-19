@@ -37,8 +37,8 @@
     "repo": "https://github.com/shivanirajani/dissertation",
     "video": "screen/demo.mp4",
     "description": {
-      "en": "A Fashion Footprint Calculator web app designed to raise awareness of sustainable fashion by helping users make informed and responsible choices. Features interactive data visualization and user-friendly design.",
-      "es": "Una aplicación web que calcula el impacto ambiental de la moda, creada para concienciar sobre la sostenibilidad en el sector y ayudar a los usuarios a tomar decisiones responsables e informadas. Incluye visualizaciones interactivas y un diseño intuitivo."
+      "en": "A web application that calculates the sustainability impact of your fashion habits, considering environmental, social, and ethical factors. It helps you understand how your clothing choices affect the planet and society, encouraging more responsible and conscious decisions through interactive visuals and an intuitive design.",
+      "es": "Una aplicación web que calcula el impacto de sostenibilidad de tus hábitos de moda, considerando aspectos ambientales, sociales y éticos. Te ayuda a comprender cómo tus elecciones de ropa afectan al planeta y a la sociedad, fomentando decisiones más responsables y conscientes mediante visualizaciones interactivas y un diseño sencillo e intuitivo."
     },
     "techStack": ["React","Node.js", "Express.js", "Chart.js", "ESLint","Framer Motion"]
     
