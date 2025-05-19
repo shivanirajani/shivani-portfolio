@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
-import { FaRegEye } from 'react-icons/fa';
+import { FaRegEye, FaGithub, FaVideo } from 'react-icons/fa';
 
 const Portfolio = () => {
-  // State to store project data, filtered projects, and selected category
   const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [language, setLanguage] = useState('en'); // State for language toggle
+  const [language, setLanguage] = useState('en');
+  const [videoToShow, setVideoToShow] = useState(null);
 
-  // Load project data from projects.json
   useEffect(() => {
     fetch('/projects.json')
       .then(response => response.json())
@@ -19,7 +18,6 @@ const Portfolio = () => {
       .catch(error => console.error('Error loading project data:', error));
   }, []);
 
-  // Function to handle category filter selection
   const handleFilterClick = (category) => {
     setSelectedCategory(category);
     if (category === 'All' || category === 'Todos') {
@@ -30,7 +28,6 @@ const Portfolio = () => {
     }
   };
 
-  // Text content for both languages
   const content = {
     en: {
       title: "Portfolio",
@@ -47,14 +44,12 @@ const Portfolio = () => {
       <header>
         <h2 className="h2 article-title">{content[language].title}</h2>
 
-        {/* Language toggle */}
         <div style={{ display: "inline-flex", gap: "10px", cursor: "pointer", fontSize: "1.5rem", marginBottom: "20px" }}>
           <span onClick={() => setLanguage('en')} style={{ opacity: language === 'en' ? 1 : 0.5 }}>🇬🇧</span>
           <span onClick={() => setLanguage('es')} style={{ opacity: language === 'es' ? 1 : 0.5 }}>🇪🇸</span>
         </div>
       </header>
 
-      {/* Filter buttons */}
       <ul className="filter-list">
         {content[language].categories.map((category) => (
           <li className="filter-item" key={category}>
@@ -69,7 +64,6 @@ const Portfolio = () => {
         ))}
       </ul>
 
-      {/* Portfolio items */}
       <section className="projects">
         <ul className="project-list">
           {filteredProjects.map(project => (
@@ -79,20 +73,139 @@ const Portfolio = () => {
               data-category={project.category}
               key={project.id}
             >
-              <a href={project.url}>
-                <figure className="project-img">
-                  <div className="project-item-icon-box">
-                    <FaRegEye />
-                  </div>
-                  <img src={project.image} alt={project.title} loading="lazy" />
+              <div className="project-image-container">
+                <figure>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    loading="lazy"
+                    className="project-image"
+                  />
                 </figure>
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-category">{project.category}</p>
-              </a>
+
+                {/* Icons overlay */}
+                <div className="project-icons">
+                  {project.url && project.id !== 3 && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="View Project"
+                      className="icon-link"
+                    >
+                      <FaRegEye size={20} />
+                    </a>
+                  )}
+
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View Repository"
+                    className="icon-link"
+                  >
+                    <FaGithub size={20} />
+                  </a>
+
+                  {project.video && (
+                    <button
+                      onClick={() => setVideoToShow(project.video)}
+                      title="Watch Demo Video"
+                      className="icon-button"
+                    >
+                      <FaVideo size={20} />
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              <h3 className="project-title">{project.title}</h3>
+              <p className="project-category">{project.category}</p>
             </li>
           ))}
         </ul>
       </section>
+
+      {videoToShow && (
+        <div
+          className="video-modal"
+          onClick={() => setVideoToShow(null)}
+        >
+          <video
+            src={videoToShow}
+            controls
+            autoPlay
+            className="video-player"
+            onClick={e => e.stopPropagation()}
+          />
+        </div>
+      )}
+
+      {/* CSS Styles */}
+      <style>{`
+        .project-image-container {
+          position: relative;
+          display: inline-block;
+        }
+
+        .project-image {
+          height: 150px;
+          display: block;
+        }
+
+        .project-icons {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          display: flex;
+          gap: 10px;
+          background-color: rgba(0, 0, 0, 0.5);
+          border-radius: 8px;
+          padding: 5px;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+        }
+
+        .project-image-container:hover .project-icons {
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        .icon-link,
+        .icon-button {
+          color: #b4afe9;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+        }
+
+        .icon-button:focus,
+        .icon-link:focus {
+          outline: 2px solid #b4afe9;
+          outline-offset: 2px;
+        }
+
+        .video-modal {
+          position: fixed;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background-color: rgba(0,0,0,0.7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+        }
+
+        .video-player {
+          max-width: 90%;
+          max-height: 90%;
+        }
+      `}</style>
     </section>
   );
 };

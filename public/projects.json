@@ -1,19 +1,30 @@
 [
-    {
-      "id": 1,
-      "title": "TICWAY",
-      "category": "Web Development",
-      "image": "images/project-1.png",
-      "url": "https://ticway.com/"
+  {
+    "id": 1,
+    "title": "TICWAY",
+    "category": "Web Development",
+    "image": "screen/project-1.png",
+    "url": "https://ticway.com/",
+    "repo": "https://github.com/shivanirajani/TICWAY-WEBSITE--IT",
+    "video": null
+  },
+  {
+    "id": 2,
+    "title": "Zen Blend",
+    "category": "Web Development",
+    "image": "screen/matcha.png",
+    "url": "https://zen-blend.vercel.app/",
+    "repo": "https://github.com/shivanirajani/Zen-Blend",
+    "video": null
+  },
+  {
+    "id": 3,
+    "title": "Dissertation Project",
+    "category": "Web Development",
+    "image": "screen/dissertation.png",
+    "url": null,
+    "repo": "https://github.com/shivanirajani/dissertation",
+    "video": "screen/demo.mp4"
     
-    },
-    {
-      "id": 2,
-      "title": "Zen Blend",
-      "category": "Web Development",
-      "image": "images/matcha.png",
-      "url": "https://zen-blend.vercel.app/"
-    }
-    
-  ]
-  
+  }
+]
