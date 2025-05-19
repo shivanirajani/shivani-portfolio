@@ -9,7 +9,7 @@ const Aside = () => {
       <div className="sidebar-info">
         <figure className="avatar-box">
           <img
-            src="/screen/s logo.png"
+            src="/screen/favicon.ico"
             alt="Shivani Bhagvanji Rajani"
             width="80"
           />
