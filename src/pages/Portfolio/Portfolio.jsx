@@ -38,6 +38,11 @@ const Portfolio = () => {
       categoryTranslations: {
         "Web Development": "Web Development",
         "UI/UX Design": "UI/UX Design"
+      },
+      tooltips: {
+        viewProject: "View Project",
+        viewRepo: "View Repository",
+        watchVideo: "Watch Demo Video"
       }
     },
     es: {
@@ -46,9 +51,15 @@ const Portfolio = () => {
       categoryTranslations: {
         "Web Development": "Desarrollo Web",
         "UI/UX Design": "Diseño UI/UX"
+      },
+      tooltips: {
+        viewProject: "Ver Proyecto",
+        viewRepo: "Ver Repositorio",
+        watchVideo: "Ver Video de Demostración"
       }
     }
   };
+  
 
   // Language change with fade effect
   const changeLanguage = (lang) => {
@@ -115,7 +126,7 @@ const Portfolio = () => {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      title="View Project"
+                      title={content[language].tooltips.viewProject}
                       className="icon-link"
                     >
                       <FaRegEye size={20} />
@@ -126,7 +137,7 @@ const Portfolio = () => {
                     href={project.repo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="View Repository"
+                    title={content[language].tooltips.viewRepo}
                     className="icon-link"
                   >
                     <FaGithub size={20} />
@@ -135,7 +146,7 @@ const Portfolio = () => {
                   {project.video && (
                     <button
                       onClick={() => setVideoToShow(project.video)}
-                      title="Watch Demo Video"
+                      title={content[language].tooltips.watchVideo}
                       className="icon-button"
                     >
                       <FaVideo size={20} />
