@@ -60,15 +60,13 @@ const Portfolio = () => {
     }
   };
 
-  // Language change with fade effect
-  const changeLanguage = (lang) => {
-    if (lang === language) return; // no change
-
-    setFade(false); // start fade-out
+  // Toggle language with fade effect
+  const toggleLanguage = () => {
+    setFade(false);
     setTimeout(() => {
-      setLanguage(lang);
-      setFade(true);  // fade-in after content changed
-    }, 300); // duration matches CSS transition time
+      setLanguage(prevLang => (prevLang === 'en' ? 'es' : 'en'));
+      setFade(true);
+    }, 300);
   };
 
   return (
@@ -79,11 +77,32 @@ const Portfolio = () => {
     >
       <header>
         <h2 className="h2 article-title">{content[language].title}</h2>
+        <button
+  onClick={toggleLanguage}
+  style={{
+    marginBottom: "2em",
+    padding: "0.5em 1em",
+    backgroundColor: "#b4afe9",
+    color: "white",
+    border: "4px solid rgba(255, 255, 255, 0.5)",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontSize: "1rem",
+    display: "flex",
+    alignItems: "center",
+    gap: "0.5em",
+    fontWeight: "600",
 
-        <div style={{ display: "inline-flex", gap: "10px", cursor: "pointer", fontSize: "1.5rem", marginBottom: "20px" }}>
-          <span onClick={() => changeLanguage('en')} style={{ opacity: language === 'en' ? 1 : 0.5 }}>🇬🇧</span>
-          <span onClick={() => changeLanguage('es')} style={{ opacity: language === 'es' ? 1 : 0.5 }}>🇪🇸</span>
-        </div>
+  }}
+  aria-label="Toggle Language"
+  type="button"
+>
+  <span style={{ fontSize: "1.2em" }}>
+    {language === "en" ? "🇪🇸" : "🇬🇧"}
+  </span>
+  {language === "en" ? "Cambiar a Español" : "Change to English"}
+</button>
+
       </header>
 
       <ul className="filter-list">
@@ -154,17 +173,13 @@ const Portfolio = () => {
                 </div>
               </div>
 
-
               <h3 className="project-title">{project.title[language]}</h3>
               <p className="project-category">
                 {content[language].categoryTranslations[project.category] || project.category}
               </p>
 
-
-              {/* Description */}
               <p className="project-description" style={{ marginLeft: '10px' }}>{project.description[language]}</p>
 
-              {/* Tech Stack */}
               <ul className="tech-stack-list" style={{ marginLeft: '10px' }}>
                 {project.techStack.map((tech, index) => (
                   <li key={index} className="tech-stack-item">{tech}</li>
@@ -203,8 +218,8 @@ const Portfolio = () => {
           object-fit: cover;
         }
         .project-category{
-       color: #b4afe9;
-       }
+          color: #b4afe9;
+        }
         .project-icons {
           position: absolute;
           top: 10px;

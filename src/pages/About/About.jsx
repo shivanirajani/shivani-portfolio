@@ -17,13 +17,14 @@ const About = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [language, setLanguage] = useState("en");
   
-  // New fade state to control opacity
+  // Fade state for smooth transitions
   const [fade, setFade] = useState(true);
 
   useEffect(() => {
     fetch('testimonials.json')
       .then(res => res.json())
-      .then(data => setTestimonials(data));
+      .then(data => setTestimonials(data))
+      .catch(err => console.error(err));
   }, []);
 
   const content = {
@@ -36,7 +37,7 @@ const About = () => {
     es: {
       title: "Sobre mí",
       description1: "¡Hola! Soy Shivani, estudiante de último año en la Universidad de Newcastle, habiendo completado mi año de prácticas en dos empresas tecnológicas en España. Me interesa el desarrollo web porque me permite crear experiencias digitales funcionales y visualmente impresionantes. Mi interés en el desarrollo front-end surgió cuando trabajé en un proyecto universitario para crear un sitio web de intercambio de libros.",
-      description2: "Mis habilidades giran en torno a HTML, CSS, JavaScript, React y Next.js. Mi objetivo es seguir explorando el desarrollo web y hacer que las experiencias digitales sean accesibles y atractivas para todos. Me gustaría aprender más sobre tecnologías como Vue.js, Three.js, y también estoy interesada en adentrarme en el desarrollo back-end y aprender PHP. Además, me gustaría aprender Figma..",
+      description2: "Mis habilidades giran en torno a HTML, CSS, JavaScript, React y Next.js. Mi objetivo es seguir explorando el desarrollo web y hacer que las experiencias digitales sean accesibles y atractivas para todos. Me gustaría aprender más sobre tecnologías como Vue.js, Three.js, y también estoy interesada en adentrarme en el desarrollo back-end y aprender PHP. Además, me gustaría aprender Figma.",
       description3: "Me encantaría colaborar con profesionales de la industria y equipos para ganar experiencia práctica y contribuir a proyectos significativos. Ya sea que busquen becarios para unirse a su equipo o estén buscando nuevas perspectivas en un proyecto de desarrollo front-end, estoy aquí para aprender, compartir mi conocimiento y trabajar juntos."
     }
   };
@@ -44,11 +45,12 @@ const About = () => {
   // Change language with fade effect
   const changeLanguage = (lang) => {
     if (lang === language) return;
+
     setFade(false); // fade out
     setTimeout(() => {
       setLanguage(lang);
-      setFade(true); // fade in
-    }, 300); // match with CSS transition duration
+      setFade(true);  // fade in
+    }, 300); // match CSS transition duration
   };
 
   return (
@@ -60,30 +62,32 @@ const About = () => {
       <header>
         <h2 className="h2 article-title">{content[language].title}</h2>
 
-        <div style={{ display: "flex", gap: "10px", alignItems: "center", marginTop: "10px" }}>
-          <span
-            onClick={() => changeLanguage("en")}
-            style={{
-              cursor: "pointer",
-              fontSize: "1.5rem",
-              opacity: language === "en" ? 1 : 0.5
-            }}
-            title="Switch to English"
-          >
-            🇬🇧
-          </span>
-          <span
-            onClick={() => changeLanguage("es")}
-            style={{
-              cursor: "pointer",
-              fontSize: "1.5rem",
-              opacity: language === "es" ? 1 : 0.5
-            }}
-            title="Switch to Spanish"
-          >
-            🇪🇸
-          </span>
-        </div>
+        <button
+  onClick={() => changeLanguage(language === "en" ? "es" : "en")}
+  aria-label="Toggle Language"
+  style={{
+    marginTop: "10px",
+    padding: "0.5em 1em",
+    backgroundColor: "#b4afe9",
+    border: "4px solid rgba(255, 255, 255, 0.5)",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontSize: "1rem",
+    userSelect: "none",
+    color: "white",
+    fontWeight: "600",
+    display: "flex",
+    alignItems: "center",
+    gap: "0.5em"
+  }}
+  type="button"
+>
+  <span style={{ fontSize: "1.2em" }}>
+    {language === "en" ? "🇪🇸" : "🇬🇧"}
+  </span>
+  {language === "en" ? "Cambiar a Español" : "Change to English"}
+</button>
+
       </header>
 
       <section className="about-text">
@@ -93,12 +97,10 @@ const About = () => {
       </section>
 
       <section className="service">
-        <ul className="service-list">
-          {iconsData.map((iconData) => (
-            <li key={iconData.id} className="service-item">
-              <a href={iconData.href} target="_blank" rel="noopener noreferrer">
-                <img src={iconData.icon} alt={iconData.name} title={iconData.name} />
-              </a>
+        <ul className="service-list" style={{ display: "flex", gap: "15px", padding: 0, listStyle: "none" }}>
+          {iconsData.map(({ id, icon, name }) => (
+            <li key={id} className="service-item" style={{ cursor: "default" }}>
+              <img src={icon} alt={name} title={name} style={{ width: 40, height: 40 }} />
             </li>
           ))}
         </ul>
@@ -108,4 +110,3 @@ const About = () => {
 };
 
 export default About;
-

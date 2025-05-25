@@ -6,6 +6,9 @@ import TimelineItem from './TimelineItem';
 const Resume = () => {
   const [language, setLanguage] = useState("en");
 
+  // Define toggleLanguage to switch between 'en' and 'es'
+  const toggleLanguage = () => setLanguage(prev => (prev === "en" ? "es" : "en"));
+
   const content = {
     en: {
       title: "Career",
@@ -77,22 +80,30 @@ const Resume = () => {
     <section>
       <header>
         <h2 className="h2 article-title">{content[language].title}</h2>
-        <div style={{ fontSize: "1.5rem", cursor: "pointer", display: "flex", gap: "10px", marginBottom: "20px" }}>
-          <span
-            onClick={() => setLanguage("en")}
-            title="English"
-            style={{ opacity: language === "en" ? 1 : 0.6 }}
-          >
-            🇬🇧
-          </span>
-          <span
-            onClick={() => setLanguage("es")}
-            title="Español"
-            style={{ opacity: language === "es" ? 1 : 0.6 }}
-          >
-            🇪🇸
-          </span>
-        </div>
+        <button
+  onClick={toggleLanguage}
+  style={{
+    marginBottom: "2em",
+    padding: "0.5em 1em",
+    backgroundColor: "#b4afe9",
+    color: "white",
+    border: "4px solid rgba(255, 255, 255, 0.5)",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontSize: "1rem",
+    fontWeight: "600",
+    display: "flex",
+    alignItems: "center",
+    gap: "0.5em",
+  }}
+  aria-label="Toggle Language"
+>
+  <span style={{ fontSize: "1.2em" }}>
+    {language === "en" ? "🇪🇸" : "🇬🇧"}
+  </span>
+  {language === "en" ? "Cambiar a Español" : "Change to English"}
+</button>
+
       </header>
 
       <AnimatePresence mode="wait">

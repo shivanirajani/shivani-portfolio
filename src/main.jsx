@@ -12,6 +12,7 @@ import Portfolio from './pages/Portfolio/Portfolio.jsx';
 import Resume from './pages/Resume/Resume.jsx';
 import About from './pages/About/About.jsx';
 import Contact from './pages/Contact/Contact.jsx';
+import CaseStudy from './pages/Case-Study1/case-study1.jsx'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
         path: "/portfolio",
         element: <Portfolio/>,
       },
+      { path: "/portfolio/casestudy", element: <CaseStudy/> },  // new route
     
       {
         path: "/contact",

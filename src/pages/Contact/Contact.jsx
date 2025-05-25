@@ -5,7 +5,7 @@ import emailjs from '@emailjs/browser';
 const Contact = () => {
   const form = useRef();
   const [language, setLanguage] = useState("en");
-  const [fade, setFade] = useState(true); // fade state
+  const [fade, setFade] = useState(true);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -53,14 +53,13 @@ const Contact = () => {
     }
   };
 
-  // Smooth language change with fade effect
-  const changeLanguage = (lang) => {
-    if (lang === language) return;
-    setFade(false); // fade out
+  // Toggle language with fade effect
+  const toggleLanguage = () => {
+    setFade(false);
     setTimeout(() => {
-      setLanguage(lang);
-      setFade(true); // fade in
-    }, 300); // match CSS transition duration
+      setLanguage((prev) => (prev === "en" ? "es" : "en"));
+      setFade(true);
+    }, 300);
   };
 
   return (
@@ -71,23 +70,31 @@ const Contact = () => {
     >
       <header>
         <h2 className="h2 article-title">{content[language].title}</h2>
+        <button
+  onClick={toggleLanguage}
+  style={{
+    marginBottom: "2em",
+    padding: "0.5em 1em",
+    backgroundColor: "#b4afe9",
+    color: "white",
+    border: "4px solid rgba(255, 255, 255, 0.5)",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontSize: "1rem",
+    fontWeight: "600",
+    display: "flex",
+    alignItems: "center",
+    gap: "0.5em"
+  }}
+  aria-label="Toggle Language"
+>
+  <span style={{ fontSize: "1.2em" }}>
+    {language === "en" ? "🇪🇸" : "🇬🇧"}
+  </span>
+  {language === "en" ? "Cambiar a Español" : "Change to English"}
+</button>
 
-        <div style={{ display: "inline-flex", gap: "10px", alignItems: "center", fontSize: "1.5rem", cursor: "pointer" }}>
-          <span
-            onClick={() => changeLanguage("en")}
-            title="English"
-            style={{ opacity: language === "en" ? 1 : 0.5 }}
-          >
-            🇬🇧
-          </span>
-          <span
-            onClick={() => changeLanguage("es")}
-            title="Español"
-            style={{ opacity: language === "es" ? 1 : 0.5 }}
-          >
-            🇪🇸
-          </span>
-        </div>
+
       </header>
 
       <section className="mapbox" data-mapbox>
