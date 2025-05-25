@@ -96,7 +96,7 @@ const caseStudyData = {
       "A modern job hunting app that streamlines your search with verified listings, personalised job matches, and career growth tools to help you find your next opportunity faster and smarter.",
     projectOverview: {
       why:
-        "To simplify and humanize the job search process by providing personalised recommendations, easy applications, and career development features.",
+        "To simplify and humanise the job search process by providing personalised recommendations, easy applications, and career development features.",
       who:
         "Job seekers ranging from recent graduates to experienced professionals seeking meaningful employment opportunities.",
       problems: [
@@ -177,7 +177,7 @@ const caseStudyData = {
     userResearch: [
       {
         type: "Online Survey",
-        description: "Survey of 40 job seekers about their challenges with current job hunting apps.",
+        description: "Survey of 20 job seekers about their challenges with current job hunting apps.",
         question: "What are your biggest frustrations when using job hunting apps?",
         options: [
           "Too many irrelevant or outdated job listings",
@@ -399,7 +399,7 @@ const caseStudyData = {
     userResearch: [
       {
         type: "Encuesta en línea",
-        description: "Encuesta a 40 buscadores de empleo sobre sus desafíos con las apps actuales para buscar trabajo.",
+        description: "Encuesta a 20 buscadores de empleo sobre sus desafíos con las apps actuales para buscar trabajo.",
         question: "¿Cuáles son tus mayores frustraciones al usar apps de búsqueda de empleo?",
         options: [
           "Demasiadas ofertas irrelevantes o desactualizadas",
