@@ -42,5 +42,23 @@
     },
     "techStack": ["React","Node.js", "Express.js", "Chart.js", "ESLint","Framer Motion"]
     
+  },
+  {
+    "id": 4,
+    "title": { 
+      "en": "UX Case Study: Jobify", 
+      "es": "Estudio de Caso UX: Jobify" 
+    },
+    "image": "screen/jobify.png",
+    "category": "UI/UX Design",
+    "description": {
+      "en": "A modern job hunting app that streamlines your search with verified listings, personalised job matches, and career growth tools to help you find your next opportunity faster and smarter.",
+      "es": "Una aplicación moderna para buscar empleo que optimiza tu búsqueda con ofertas verificadas, coincidencias personalizadas y herramientas de crecimiento profesional para ayudarte a encontrar tu próxima oportunidad más rápido e inteligentemente."
+    },
+    "techStack": ["Figma", "Microsoft Forms", "Miro"],
+    "url": "/portfolio/casestudy"
   }
+  
+  
+  
 ]

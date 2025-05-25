@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaRegEye, FaGithub, FaVideo } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom'; // assuming you use react-router
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -8,8 +9,9 @@ const Portfolio = () => {
   const [language, setLanguage] = useState('en');
   const [videoToShow, setVideoToShow] = useState(null);
 
-  // State for fade animation
   const [fade, setFade] = useState(true);
+
+  const navigate = useNavigate(); // hook for navigation
 
   useEffect(() => {
     fetch('/projects.json')
@@ -60,13 +62,20 @@ const Portfolio = () => {
     }
   };
 
-  // Toggle language with fade effect
   const toggleLanguage = () => {
     setFade(false);
     setTimeout(() => {
       setLanguage(prevLang => (prevLang === 'en' ? 'es' : 'en'));
       setFade(true);
     }, 300);
+  };
+
+  // Handle click on project item
+  const handleProjectClick = (project) => {
+    if (project.id === 4) {
+      // Redirect to /portfolio/casestudy
+      navigate('/portfolio/casestudy');
+    }
   };
 
   return (
@@ -78,31 +87,29 @@ const Portfolio = () => {
       <header>
         <h2 className="h2 article-title">{content[language].title}</h2>
         <button
-  onClick={toggleLanguage}
-  style={{
-    marginBottom: "2em",
-    padding: "0.5em 1em",
-    backgroundColor: "#b4afe9",
-    color: "white",
-    border: "4px solid rgba(255, 255, 255, 0.5)",
-    borderRadius: "5px",
-    cursor: "pointer",
-    fontSize: "1rem",
-    display: "flex",
-    alignItems: "center",
-    gap: "0.5em",
-    fontWeight: "600",
-
-  }}
-  aria-label="Toggle Language"
-  type="button"
->
-  <span style={{ fontSize: "1.2em" }}>
-    {language === "en" ? "🇪🇸" : "🇬🇧"}
-  </span>
-  {language === "en" ? "Cambiar a Español" : "Change to English"}
-</button>
-
+          onClick={toggleLanguage}
+          style={{
+            marginBottom: "2em",
+            padding: "0.5em 1em",
+            backgroundColor: "#b4afe9",
+            color: "white",
+            border: "4px solid rgba(255, 255, 255, 0.5)",
+            borderRadius: "5px",
+            cursor: "pointer",
+            fontSize: "1rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5em",
+            fontWeight: "600",
+          }}
+          aria-label="Toggle Language"
+          type="button"
+        >
+          <span style={{ fontSize: "1.2em" }}>
+            {language === "en" ? "🇪🇸" : "🇬🇧"}
+          </span>
+          {language === "en" ? "Cambiar a Español" : "Change to English"}
+        </button>
       </header>
 
       <ul className="filter-list">
@@ -128,63 +135,104 @@ const Portfolio = () => {
               data-category={project.category}
               key={project.id}
             >
-              <div className="project-image-container">
-                <figure>
-                  <img
-                    src={project.image}
-                    alt={project.title[language]}
-                    loading="lazy"
-                    className="project-image"
-                  />
-                </figure>
+              {project.id === 4 ? (
+                // For project with id 4, make the entire card clickable for redirect
+                <button
+                  onClick={() => handleProjectClick(project)}
+                  style={{
+                    all: 'unset',
+                    cursor: 'pointer',
+                    display: 'block',
+                    width: '100%',
+                    textAlign: 'left',
+                  }}
+                  aria-label={`Go to case study for ${project.title[language]}`}
+                >
+                  <div className="project-image-container">
+                    <figure>
+                      <img
+                        src={project.image}
+                        alt={project.title[language]}
+                        loading="lazy"
+                        className="project-image"
+                      />
+                    </figure>
+                  </div>
 
-                <div className="project-icons">
-                  {project.url && project.id !== 3 && (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title={content[language].tooltips.viewProject}
-                      className="icon-link"
-                    >
-                      <FaRegEye size={20} />
-                    </a>
-                  )}
+                  <h3 className="project-title">{project.title[language]}</h3>
+                  <p className="project-category">
+                    {content[language].categoryTranslations[project.category] || project.category}
+                  </p>
 
-                  <a
-                    href={project.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={content[language].tooltips.viewRepo}
-                    className="icon-link"
-                  >
-                    <FaGithub size={20} />
-                  </a>
+                  <p className="project-description" style={{ marginLeft: '10px' }}>{project.description[language]}</p>
 
-                  {project.video && (
-                    <button
-                      onClick={() => setVideoToShow(project.video)}
-                      title={content[language].tooltips.watchVideo}
-                      className="icon-button"
-                    >
-                      <FaVideo size={20} />
-                    </button>
-                  )}
-                </div>
-              </div>
+                  <ul className="tech-stack-list" style={{ marginLeft: '10px' }}>
+                    {project.techStack.map((tech, index) => (
+                      <li key={index} className="tech-stack-item">{tech}</li>
+                    ))}
+                  </ul>
+                </button>
+              ) : (
+                <>
+                  <div className="project-image-container">
+                    <figure>
+                      <img
+                        src={project.image}
+                        alt={project.title[language]}
+                        loading="lazy"
+                        className="project-image"
+                      />
+                    </figure>
 
-              <h3 className="project-title">{project.title[language]}</h3>
-              <p className="project-category">
-                {content[language].categoryTranslations[project.category] || project.category}
-              </p>
+                    <div className="project-icons">
+                      {project.url && project.id !== 3 && (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={content[language].tooltips.viewProject}
+                          className="icon-link"
+                        >
+                          <FaRegEye size={20} />
+                        </a>
+                      )}
 
-              <p className="project-description" style={{ marginLeft: '10px' }}>{project.description[language]}</p>
+                      <a
+                        href={project.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={content[language].tooltips.viewRepo}
+                        className="icon-link"
+                      >
+                        <FaGithub size={20} />
+                      </a>
 
-              <ul className="tech-stack-list" style={{ marginLeft: '10px' }}>
-                {project.techStack.map((tech, index) => (
-                  <li key={index} className="tech-stack-item">{tech}</li>
-                ))}
-              </ul>
+                      {project.video && (
+                        <button
+                          onClick={() => setVideoToShow(project.video)}
+                          title={content[language].tooltips.watchVideo}
+                          className="icon-button"
+                        >
+                          <FaVideo size={20} />
+                        </button>
+                      )}
+                    </div>
+                  </div>
+
+                  <h3 className="project-title">{project.title[language]}</h3>
+                  <p className="project-category">
+                    {content[language].categoryTranslations[project.category] || project.category}
+                  </p>
+
+                  <p className="project-description" style={{ marginLeft: '10px' }}>{project.description[language]}</p>
+
+                  <ul className="tech-stack-list" style={{ marginLeft: '10px' }}>
+                    {project.techStack.map((tech, index) => (
+                      <li key={index} className="tech-stack-item">{tech}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </li>
           ))}
         </ul>
