@@ -59,7 +59,7 @@ const Resume = () => {
       volunteeringTitle: "Volunteering",
       timelineItems: {
         education: [
-          { degree: "Computer Science", place: "Newcastle University", date: "2021 — 2025", description: "React, Python, MongoDB, SQL, Java" },
+          { degree: "Computer Science", place: "Newcastle University", date: "2021 — 2025", description: "React, Python, MongoDB, SQL, Java, Jupyter Notebook" },
           { place: "British School of Gran Canaria", date: "2006 — 2021", description: "A Levels in Spanish, Chemistry, Mathematics" }
         ],
         workExperience: [
@@ -89,7 +89,7 @@ const Resume = () => {
       volunteeringTitle: "Voluntariado",
       timelineItems: {
         education: [
-          { degree: "Ciencias de la Computación", place: "Newcastle University", date: "2021 — 2025", description: "React, Python, MongoDB, SQL, Java" },
+          { degree: "Ciencias de la Computación", place: "Newcastle University", date: "2021 — 2025", description: "React, Python, MongoDB, SQL, Java, Jupyter Notebook" },
           { place: "British School of Gran Canaria", date: "2006 — 2021", description: "A Levels en Lengua Castellaña, Química, Matemáticas" }
         ],
         workExperience: [
