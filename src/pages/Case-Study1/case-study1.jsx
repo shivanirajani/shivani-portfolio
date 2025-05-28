@@ -75,17 +75,18 @@ const translations = {
     solutions: "Solutions",
   },
   es: {
-    userResearch: "Investigación de Usuarios",
-    painPoints: "Puntos de Dolor",
-    empathyMapping: "Mapa de Empatía",
-    competitorAnalysis: "Análisis de la Competencia",
-    projectOverview: "Resumen del Proyecto",
+    userResearch: "Investigación de usuarios",
+    painPoints: "Puntos críticos",
+    empathyMapping: "Mapa de empatía",
+    competitorAnalysis: "Análisis de la competencia",
+    projectOverview: "Resumen del proyecto",
     why: "Por qué",
     who: "Quién",
     problems: "Problemas",
     solutions: "Soluciones",
   },
 };
+
 
 // =================== CASE STUDY DATA ===================
 const caseStudyData = {
@@ -597,7 +598,8 @@ function UserResearch({ language }) {
           font: { size: 12 },
           callback: function (val) {
             const label = this.getLabelForValue(val);
-            return label.length > 20 ? label.match(/.{1,20}/g) : label;
+            // Break label into multiple lines at word boundaries, max 15 chars per line
+            return label.match(/.{1,15}(\s|$)|\S+/g);
           },
         },
         grid: { color: "rgba(255, 255, 255, 0.1)" },
