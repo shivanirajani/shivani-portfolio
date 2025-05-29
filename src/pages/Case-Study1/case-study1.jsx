@@ -73,6 +73,8 @@ const translations = {
     who: "Who",
     problems: "Problems",
     solutions: "Solutions",
+    lowFidelity: "Low-Fidelity Prototypes",
+    highFidelity: "High-Fidelity Prototypes",
   },
   es: {
     userResearch: "Investigación de usuarios",
@@ -84,6 +86,8 @@ const translations = {
     who: "Quién",
     problems: "Problemas",
     solutions: "Soluciones",
+    lowFidelity: "Prototipos de baja fidelidad",
+    highFidelity: "Prototipos de alta fidelidad",
   },
 };
 
@@ -567,14 +571,21 @@ function UserResearch({ language }) {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
-    layout: { padding: { bottom: 40 } },
+    layout: {
+      padding: {
+        bottom: 80, // try 80–100 to fit full 90° labels
+      },
+    },
     plugins: {
       legend: { display: false },
       title: {
         display: true,
         text: survey.question,
         color: COLORS.sectionTitle,
-        font: { size: 18, weight: "bold" },
+        font: (ctx) => ({
+          size: ctx.chart.width < 500 ? 16 : 24,
+          weight: ctx.chart.width < 500 ? "500" : "700",
+        }),
       },
       tooltip: {
         callbacks: {
@@ -595,15 +606,23 @@ function UserResearch({ language }) {
         ticks: {
           color: COLORS.text,
           autoSkip: false,
-          font: { size: 12 },
+          font: (ctx) => ({
+            size: ctx.chart.width < 500 ? 10 : 12,
+          }),
+          maxRotation: 90,
+          minRotation: 90,
           callback: function (val) {
             const label = this.getLabelForValue(val);
-            // Break label into multiple lines at word boundaries, max 15 chars per line
-            return label.match(/.{1,15}(\s|$)|\S+/g);
+            return label;
           },
         },
         grid: { color: "rgba(255, 255, 255, 0.1)" },
       },
+      
+    
+  
+      
+      
     },
   };
 
@@ -613,9 +632,16 @@ function UserResearch({ language }) {
       {summary && (
         <p style={{ fontStyle: "italic", color: "#aaa", marginBottom: 20 }}>{summary}</p>
       )}
-      <div style={{ height: "60vh", width: "100%" }}>
-        <Bar data={chartData} options={options} />
-      </div>
+     <div
+  style={{
+    height: "70vh", // or try 80vh if needed
+    width: "100%",
+    overflowX: "auto",
+  }}
+>
+  <Bar data={chartData} options={options} />
+</div>
+
       <div style={{ marginTop: 30 }}>
         <h3 style={{ color: COLORS.sectionTitle }}>{survey.type}</h3>
         <p>{survey.description}</p>
@@ -767,6 +793,30 @@ function CompetitorAnalysis({ language }) {
   );
 }
 
+function LowFidelityPrototypes({ language }) {
+  const data = caseStudyData[language];
+
+  return (
+    <section style={responsiveStyle.card}>
+      <h2 style={responsiveStyle.sectionTitle}>
+        {translations[language].lowFidelity}
+      </h2>
+    </section>
+  );
+}
+
+function HighFidelityPrototypes({ language }) {
+  const data = caseStudyData[language];
+
+  return (
+    <section style={responsiveStyle.card}>
+      <h2 style={responsiveStyle.sectionTitle}>
+        {translations[language].highFidelity}
+      </h2>
+    </section>
+  );
+}
+
 
 // ===================== MAIN APP ========================
 
@@ -907,6 +957,8 @@ export default function App() {
       <PainPoints language={language} />
       <EmpathyMapping language={language} />
       <CompetitorAnalysis language={language} />
+      <LowFidelityPrototypes language={language} />
+      <HighFidelityPrototypes language={language} />
     </div>
   );
 }
