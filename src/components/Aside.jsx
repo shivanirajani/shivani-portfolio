@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { GiMailbox, GiMayanPyramid, GiPhone } from "react-icons/gi";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FiChevronDown } from "react-icons/fi";
 
@@ -125,6 +125,7 @@ const Aside = () => {
           display: flex;
           align-items: center;
           gap: 16px;
+            margin-too: 10px;
         }
 
         .contact-info {
@@ -148,15 +149,7 @@ const Aside = () => {
           font-style: normal;
         }
 
-        .social-list {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          gap: 15px;
-          padding-bottom: 4px;
-          padding-left: 7px;
-        }
-
+      
         .social-item .social-link {
           color: var(--light-gray-70);
           font-size: 18px;
@@ -165,6 +158,37 @@ const Aside = () => {
         .social-item .social-link:hover {
           color: var(--light-gray);
         }
+          .icon-box {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #6b5b95, #b4afe9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  box-shadow: 0 2px 6px rgba(107, 91, 149, 0.5);
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: default;
+
+  
+}
+
+.contact-item:hover .icon-box {
+  background: linear-gradient(135deg, #4a3c7a, #8f8cdf);
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(74, 60, 122, 0.7);
+  
+}
+
+.contact-link:hover {
+  color: #8f8cdf;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
       `}</style>
 
       <aside className={`sidebar ${sidebarClass}`}>
@@ -185,12 +209,12 @@ const Aside = () => {
               aria-expanded={showInfoMore}
               aria-controls="sidebar-info-more"
             >
-              <span>Contact</span>
+
               <FiChevronDown />
             </a>
           ) : (
             <Link to="/contact" className="info_more-btn" data-sidebar-btn>
-              <span>Contact</span>
+
               <FiChevronDown />
             </Link>
           )}
@@ -201,7 +225,7 @@ const Aside = () => {
 
           <ul className="contacts-list">
             <li className="contact-item">
-              <div className="icon-box"><GiMailbox /></div>
+              <div className="icon-box"><FaEnvelope /></div>
               <div className="contact-info">
                 <p className="contact-title">Email</p>
                 <a href="mailto:shivanibhagvanji@gmail.com" className="contact-link">shivanibhagvanji@gmail.com</a>

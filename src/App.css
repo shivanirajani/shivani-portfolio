@@ -311,12 +311,14 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
-  overflow: hidden;
+  max-height: 300px; /* even longer */
   transition: var(--transition-2);
 }
 
-.sidebar.active { max-height: 405px; }
+
+.sidebar.active {
+  max-height: 405px;
+}
 
 .sidebar-info {
   position: relative;
@@ -331,9 +333,10 @@ main {
   border-radius: 20px;
 }
 
-.avatar-box img{
+.avatar-box img {
   border-radius: 20px;
 }
+
 .info-content .name {
   color: var(--white-2);
   font-size: var(--fs-5);
@@ -354,15 +357,20 @@ main {
 
 .info_more-btn {
   position: absolute;
-  top: -15px;
-  right: -15px;
-  border-radius: 0 15px;
-  font-size: 15px;
-  background: var(--border-gradient-onyx);
-  padding: 10px;
+  top: -20px;
+  right: -20px;
+  border-radius: 0 20px 20px 0;
+  font-size: 18px;
+  padding: 14px 18px;
   box-shadow: var(--shadow-2);
   transition: var(--transition-1);
   z-index: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 40px;
+  min-height: 70px;
 }
 
 .info_more-btn::before {
@@ -375,23 +383,45 @@ main {
   z-index: -1;
 }
 
-.info_more-btn:hover,
+.info_more-btn span {
+  transition: opacity 0.3s ease;
+  color: #b4afe9;
+}
 
+.info_more-btn:hover span {
+  opacity: 0.5;
+}
 
-.info_more-btn:hover::before,
+.info_more-btn svg {
+  color: #b4afe9;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
 
+.sidebar.active .info_more-btn svg {
+  transform: rotate(180deg);
+  color: #b4afe9;
+}
 
-.info_more-btn span { display: none; }
-
+/* Fix: add background, padding, border-radius to the expanded info */
 .sidebar-info_more {
+
+  padding: 15px 20px;
+  border-radius: 0 0 20px 20px;
+  margin-top: 10px;
+
   opacity: 0;
   visibility: hidden;
-  transition: var(--transition-2);
+  max-height: 0;
+  overflow: hidden;
+
+  transition: max-height 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .sidebar.active .sidebar-info_more {
   opacity: 1;
   visibility: visible;
+  max-height: 1000px;
+  overflow: visible;
 }
 
 .contacts-list {
@@ -424,7 +454,9 @@ main {
   font-size: 11px;
 }
 
-.contact-info address { font-style: normal; }
+.contact-info address {
+  font-style: normal;
+}
 
 .social-list {
   display: flex;
@@ -440,10 +472,9 @@ main {
   font-size: 18px;
 }
 
-
-.social-item .social-link:hover { color: var(--light-gray); }
-
-
+.social-item .social-link:hover {
+  color: var(--light-gray);
+}
 
 
 
