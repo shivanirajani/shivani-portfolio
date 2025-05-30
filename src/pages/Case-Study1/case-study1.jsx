@@ -185,10 +185,10 @@ const caseStudyData = {
         description: "Survey of 20 job seekers about their challenges with current job hunting apps.",
         question: "What are your biggest frustrations when using job hunting apps?",
         options: [
-          "Too many irrelevant or outdated job listings",
-          "Complex and time-consuming application processes",
-          "Lack of personalised job recommendations",
-          "No skill development or career advice features",
+          "Outdated or irrelevant listings",
+          "Time-consuming application process",
+          "No personalised job matches",
+          "No skill-building or career advice",
         ],
         insights: [
           "75% of respondents reported frustration with irrelevant or outdated listings.",
@@ -407,10 +407,10 @@ const caseStudyData = {
         description: "Encuesta a 20 buscadores de empleo sobre sus desafíos con las apps actuales para buscar trabajo.",
         question: "¿Cuáles son tus mayores frustraciones al usar apps de búsqueda de empleo?",
         options: [
-          "Demasiadas ofertas irrelevantes o desactualizadas",
-          "Procesos de solicitud complejos y que consumen mucho tiempo",
-          "Falta de recomendaciones personalizadas de empleo",
-          "Sin funciones de desarrollo de habilidades o asesoría profesional",
+          "Ofertas irrelevantes o desactualizadas",
+          "Procesos de solicitud largos y complejos",
+          "Falta de recomendaciones personalizadas",
+          "Sin desarrollo de habilidades o asesoría",
         ],
         insights: [
           "El 75% de los encuestados reportó frustración con ofertas irrelevantes o desactualizadas.",
@@ -571,21 +571,14 @@ function UserResearch({ language }) {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
-    layout: {
-      padding: {
-        bottom: 80, // try 80–100 to fit full 90° labels
-      },
-    },
+    layout: { padding: { bottom: 40 } },
     plugins: {
       legend: { display: false },
       title: {
         display: true,
         text: survey.question,
         color: COLORS.sectionTitle,
-        font: (ctx) => ({
-          size: ctx.chart.width < 500 ? 16 : 24,
-          weight: ctx.chart.width < 500 ? "500" : "700",
-        }),
+        font: { size: 18, weight: "bold" },
       },
       tooltip: {
         callbacks: {
@@ -609,19 +602,24 @@ function UserResearch({ language }) {
           font: (ctx) => ({
             size: ctx.chart.width < 500 ? 10 : 12,
           }),
-          maxRotation: 90,
-          minRotation: 90,
+          maxRotation: (ctx) => (ctx.chart.width < 600 ? 90 : 0),
+          minRotation: (ctx) => (ctx.chart.width < 600 ? 90 : 0),
           callback: function (val) {
             const label = this.getLabelForValue(val);
+      
+            // If the chart is wide, allow word wrapping (not mid-word)
+            if (this.chart.width >= 600) {
+              return label.split(' '); // Break into array at spaces (new line per word)
+            }
+      
             return label;
           },
+          padding: 8,
         },
-        grid: { color: "rgba(255, 255, 255, 0.1)" },
+        grid: {
+          color: "rgba(255, 255, 255, 0.1)",
+        },
       },
-      
-    
-  
-      
       
     },
   };
@@ -632,16 +630,9 @@ function UserResearch({ language }) {
       {summary && (
         <p style={{ fontStyle: "italic", color: "#aaa", marginBottom: 20 }}>{summary}</p>
       )}
-     <div
-  style={{
-    height: "70vh", // or try 80vh if needed
-    width: "100%",
-    overflowX: "auto",
-  }}
->
-  <Bar data={chartData} options={options} />
-</div>
-
+      <div style={{ height: "60vh", width: "100%" }}>
+        <Bar data={chartData} options={options} />
+      </div>
       <div style={{ marginTop: 30 }}>
         <h3 style={{ color: COLORS.sectionTitle }}>{survey.type}</h3>
         <p>{survey.description}</p>
