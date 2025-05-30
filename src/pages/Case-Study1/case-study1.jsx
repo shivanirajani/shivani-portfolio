@@ -409,7 +409,7 @@ const caseStudyData = {
         options: [
           "Ofertas irrelevantes o desactualizadas",
           "Procesos de solicitud largos y complejos",
-          "Falta de recomendaciones personalizadas",
+          "Pocas recomendaciones personalizadas",
           "Sin desarrollo de habilidades o asesoría",
         ],
         insights: [
