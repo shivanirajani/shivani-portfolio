@@ -81,7 +81,7 @@ const translations = {
     solutionsDeliveredLabel: "Solutions Delivered:",
 
     homeScreenTitle: "Home Screen",
-    homeScreenAlt: "Home / Dashboard Screen Wireframe",
+    homeScreenAlt: "Home Wireframe",
     homeScreenPurpose: "A smart, welcoming hub that gives an overview of your job hunt and quick access to key features.",
     homeProblemsLabel: "Problems Addressed:",
     homeSolutionsLabel: "Solutions Delivered:",
@@ -92,7 +92,7 @@ const translations = {
       "Cluttered UX: Focus mode toggle declutters view, clear quick-access tiles improve navigation"
     ],
     homeSolutions: [
-      "Advanced Personalized Recommendations: AI-driven smart job cards with skill match percentages",
+      "Advanced personalised Recommendations: AI-driven smart job cards with skill match percentages",
       "One-Click Application: Apply directly from dashboard without navigating away",
       "Applicant Spotlight: Highlights best job matches for the user",
       "Minimalist UI with Focus Mode: Toggle simplifies job feed to top verified listings only",
@@ -118,18 +118,18 @@ const translations = {
     ],
 
     careerHubScreenTitle: "Career Hub Screen",
-    careerHubScreenAlt: "Career Hub / Learning Screen Wireframe",
+    careerHubScreenAlt: "Career Hub Wireframe",
     careerHubScreenPurpose: "Dedicated upskilling and career growth space with AI-powered advice.",
     careerHubProblemsLabel: "Problems Addressed:",
     careerHubSolutionsLabel: "Solutions Delivered:",
     careerHubProblems: [
       "Lack of integrated skill development tools: micro-courses and learning paths embedded",
-      "User frustration with skill gaps: personalized course suggestions",
+      "User frustration with skill gaps: personalised course suggestions",
       "Anxiety about career readiness: resume building, interview prep, career coaching in-app"
     ],
     careerHubSolutions: [
       "Integrated Learning Hub: Courses, progress tracking, and badges within the platform",
-      "AI Career Coaching: Personalized guidance through chat bot",
+      "AI Career Coaching: personalised guidance through chat bot",
       "Resume and Interview Tools: Supports job readiness all in one place"
     ],
 
@@ -145,14 +145,13 @@ const translations = {
     ],
     messagingSolutions: [
       "In-App Messaging: Seamless communication channel without premium fees",
-      "Recruiter & Professional Suggestions: AI-driven connection recommendations",
       "Enhanced Engagement Tools: Status indicators, message templates for easy outreach"
     ]
   },
 
   es: {
     userResearch: "Investigación de usuarios",
-    painPoints: "Puntos críticos",
+    painPoints: "Puntos de dolor",
     empathyMapping: "Mapa de empatía",
     competitorAnalysis: "Análisis de la competencia",
     projectOverview: "Resumen del proyecto",
@@ -162,81 +161,80 @@ const translations = {
     solutions: "Soluciones",
     lowFidelity: "Prototipos de baja fidelidad",
     highFidelity: "Prototipos de alta fidelidad",
-
-    screenPurposeLabel: "Propósito de la pantalla:",
-    problemsAddressedLabel: "Problemas abordados:",
-    solutionsDeliveredLabel: "Soluciones entregadas:",
-
+  
+    screenPurposeLabel: "Objetivo de la pantalla:",
+    problemsAddressedLabel: "Problemas detectados:",
+    solutionsDeliveredLabel: "Soluciones aplicadas:",
+  
     homeScreenTitle: "Pantalla de inicio",
-    homeScreenAlt: "Wireframe de la pantalla de inicio / panel de control",
-    homeScreenPurpose: "Un centro inteligente y acogedor que proporciona una visión general de tu búsqueda de empleo y acceso rápido a funciones clave.",
-    homeProblemsLabel: "Problemas abordados:",
-    homeSolutionsLabel: "Soluciones entregadas:",
+    homeScreenAlt: "Wireframe del panel de inicio",
+    homeScreenPurpose: "Un espacio inteligente y accesible que ofrece una visión general de tu búsqueda de empleo y acceso directo a funciones clave.",
+    homeProblemsLabel: "Problemas detectados:",
+    homeSolutionsLabel: "Soluciones aplicadas:",
     homeProblems: [
-      "Personalización y filtrado limitados: recomendaciones de trabajo adaptadas al usuario",
-      "Proceso de aplicación complejo y con muchos pasos: accesos directos de 'Aplicar con 1 clic'",
-      "Visibilidad y competencia limitadas: Spotlight y porcentaje de coincidencia de habilidades destacan mejores opciones",
-      "UX desordenada: el modo de enfoque reduce el ruido visual, los accesos directos mejoran la navegación"
+      "Personalización y filtros limitados: recomendaciones adaptadas al perfil del usuario",
+      "Proceso de solicitud complejo: accesos directos con 'Aplicar con un clic'",
+      "Poca visibilidad del candidato: Spotlight y coincidencia de habilidades destacan mejores opciones",
+      "Interfaz sobrecargada: el modo enfoque reduce el ruido visual y los accesos rápidos agilizan la navegación"
     ],
     homeSolutions: [
-      "Recomendaciones personalizadas avanzadas: tarjetas de empleo inteligentes con porcentaje de coincidencia de habilidades",
-      "Aplicación con un solo clic: aplicar directamente desde el panel sin salir",
-      "Spotlight para solicitantes: destaca los mejores empleos para el usuario",
-      "Interfaz minimalista con modo de enfoque: muestra solo empleos verificados destacados",
-      "Accesos rápidos: atajos a CV, empleos guardados, centro de carrera y mensajería"
+      "Recomendaciones personalizadas con IA: tarjetas inteligentes con porcentaje de coincidencia",
+      "Aplicación directa con un solo clic desde el panel",
+      "Spotlight para destacar las ofertas más adecuadas",
+      "Modo enfoque y diseño minimalista: solo empleos verificados",
+      "Accesos rápidos a CV, empleos guardados, centro de carrera y mensajería"
     ],
-
-    searchScreenTitle: "Pantalla de búsqueda y filtro de empleos",
-    searchScreenAlt: "Wireframe de búsqueda y filtro de empleos",
-    searchScreenPurpose: "Página de búsqueda potente con filtros inteligentes, resultados en tiempo real y diseño limpio.",
-    searchProblemsLabel: "Problemas abordados:",
-    searchSolutionsLabel: "Soluciones entregadas:",
+  
+    searchScreenTitle: "Pantalla de búsqueda de empleo",
+    searchScreenAlt: "Wireframe de la búsqueda y filtros de empleo",
+    searchScreenPurpose: "Buscador potente con filtros inteligentes, resultados en tiempo real y diseño claro.",
+    searchProblemsLabel: "Problemas detectados:",
+    searchSolutionsLabel: "Soluciones aplicadas:",
     searchProblems: [
-      "Anuncios no verificados o desactualizados: se muestran con insignia de verificado y actualizaciones en tiempo real",
-      "Personalización y filtrado insuficientes: filtros avanzados por modalidad, salario, habilidades, verificados",
-      "Procesos de aplicación complejos: posibilidad de aplicar o guardar directamente desde los resultados",
-      "UI desordenada: diseño limpio con chips de filtros y menú de ordenamiento"
+      "Ofertas no verificadas o desactualizadas: se indican como verificadas y con estado actualizado",
+      "Filtros poco precisos: opciones avanzadas por modalidad, salario, habilidades y ofertas verificadas",
+      "Proceso de solicitud lento: posibilidad de aplicar o guardar directamente desde los resultados",
+      "Diseño confuso: interfaz clara con chips de filtro y ordenación"
     ],
     searchSolutions: [
-      "Verificación de empleos con IA: etiquetas de verificado para mayor confianza",
-      "Filtros inteligentes y ordenamiento: opciones dinámicas para personalizar resultados",
-      "Aplicación y guardado con un clic: interacción más rápida y sencilla",
-      "Interfaz minimalista: diseño enfocado con controles de filtro intuitivos y tarjetas limpias"
+      "Verificación automática con IA: etiquetas de confianza para cada empleo",
+      "Filtros dinámicos y orden personalizado",
+      "Aplicación y guardado instantáneo desde los resultados",
+      "Interfaz limpia y enfocada con controles intuitivos"
     ],
-
-    careerHubScreenTitle: "Pantalla del centro de carrera",
-    careerHubScreenAlt: "Wireframe del centro de aprendizaje / carrera",
-    careerHubScreenPurpose: "Espacio dedicado al crecimiento profesional con asesoría impulsada por IA.",
-    careerHubProblemsLabel: "Problemas abordados:",
-    careerHubSolutionsLabel: "Soluciones entregadas:",
+  
+    careerHubScreenTitle: "Centro de carrera",
+    careerHubScreenAlt: "Wireframe del centro de carrera",
+    careerHubScreenPurpose: "Espacio dedicado al desarrollo profesional con asesoramiento personalizado basado en IA.",
+    careerHubProblemsLabel: "Problemas detectados:",
+    careerHubSolutionsLabel: "Soluciones aplicadas:",
     careerHubProblems: [
-      "Falta de herramientas integradas para desarrollo de habilidades: microcursos y rutas de aprendizaje",
-      "Frustración del usuario con brechas de habilidades: sugerencias personalizadas",
-      "Ansiedad por preparación profesional: CV, simulacros de entrevistas, coaching dentro de la app"
+      "Falta de herramientas para desarrollar habilidades: microcursos y rutas formativas",
+      "Frustración por brechas de conocimiento: sugerencias adaptadas al perfil",
+      "Inseguridad en la preparación profesional: CV, simulaciones de entrevistas y coaching en la misma app"
     ],
     careerHubSolutions: [
-      "Centro de aprendizaje integrado: cursos, seguimiento de progreso y medallas en la plataforma",
-      "Coaching profesional con IA: guía personalizada a través de chatbot",
-      "Herramientas para CV y entrevistas: preparación completa en un solo lugar"
+      "Plataforma de aprendizaje integrada: cursos, seguimiento y medallas",
+      "Orientación profesional con IA: asesoramiento personalizado mediante chatbot",
+      "Herramientas para crear CV y preparar entrevistas en un solo lugar"
     ],
-
-    messagingScreenTitle: "Mensajería y networking",
-    messagingScreenAlt: "Wireframe de mensajería y conexiones profesionales",
-    messagingScreenPurpose: "Herramienta integrada para contactar reclutadores y hacer networking profesional.",
-    messagingProblemsLabel: "Problemas abordados:",
-    messagingSolutionsLabel: "Soluciones entregadas:",
+  
+    messagingScreenTitle: "Mensajería y contactos",
+    messagingScreenAlt: "Wireframe de mensajería y red de contactos",
+    messagingScreenPurpose: "Canal integrado para conectar con reclutadores y hacer networking profesional.",
+    messagingProblemsLabel: "Problemas detectados:",
+    messagingSolutionsLabel: "Soluciones aplicadas:",
     messagingProblems: [
-      "Herramientas de comunicación débiles: mensajería sin muros de pago",
-      "Visibilidad limitada de conexiones: sugerencias inteligentes basadas en actividad",
-      "Difícil generar conexión con reclutadores: plantillas de mensaje e indicadores de estado"
+      "Herramientas de comunicación limitadas: sin barreras de pago",
+      "Difícil descubrir conexiones: sugerencias inteligentes según actividad",
+      "Poca conexión con reclutadores: plantillas de mensajes e indicadores de estado"
     ],
     messagingSolutions: [
-      "Mensajería integrada: canal directo sin costos premium",
-      "Sugerencias de contactos: recomendaciones impulsadas por IA",
-      "Herramientas de interacción: plantillas, indicadores de estado para facilitar el contacto"
+      "Mensajería integrada sin coste adicional",
+      "Plantillas y estados para facilitar la interacción"
     ]
   }
-};
+};  
 
 
 
