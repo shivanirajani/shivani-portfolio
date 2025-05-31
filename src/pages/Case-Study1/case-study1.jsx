@@ -75,7 +75,81 @@ const translations = {
     solutions: "Solutions",
     lowFidelity: "Low-Fidelity Prototypes",
     highFidelity: "High-Fidelity Prototypes",
+
+    screenPurposeLabel: "Screen Purpose:",
+    problemsAddressedLabel: "Problems Addressed:",
+    solutionsDeliveredLabel: "Solutions Delivered:",
+
+    homeScreenTitle: "Home Screen",
+    homeScreenAlt: "Home / Dashboard Screen Wireframe",
+    homeScreenPurpose: "A smart, welcoming hub that gives an overview of your job hunt and quick access to key features.",
+    homeProblemsLabel: "Problems Addressed:",
+    homeSolutionsLabel: "Solutions Delivered:",
+    homeProblems: [
+      "Limited personalization & filtering: job recommendations tailored to the user",
+      "Complex & multi-step application process: “1-Click Apply” shortcuts simplify applying",
+      "Limited visibility & competition: Spotlight and skill match % highlight best fits",
+      "Cluttered UX: Focus mode toggle declutters view, clear quick-access tiles improve navigation"
+    ],
+    homeSolutions: [
+      "Advanced Personalized Recommendations: AI-driven smart job cards with skill match percentages",
+      "One-Click Application: Apply directly from dashboard without navigating away",
+      "Applicant Spotlight: Highlights best job matches for the user",
+      "Minimalist UI with Focus Mode: Toggle simplifies job feed to top verified listings only",
+      "Quick Access Tiles: Easy shortcuts to resume, saved jobs, career hub, and messaging"
+    ],
+
+    searchScreenTitle: "Job Search & Filter Screen",
+    searchScreenAlt: "Job Search & Filter Screen Wireframe",
+    searchScreenPurpose: "Powerful search page with smart filters, real-time results, and clean layout.",
+    searchProblemsLabel: "Problems Addressed:",
+    searchSolutionsLabel: "Solutions Delivered:",
+    searchProblems: [
+      "Unverified & outdated job listings: jobs show “verified” badge and real-time update status",
+      "Insufficient personalization & filtering: advanced filter options (remote, salary, skill match, verified only)",
+      "Complex application processes: Apply or save directly from search results",
+      "Cluttered UI: Clean layout with filter chips and sort dropdown"
+    ],
+    searchSolutions: [
+      "AI-Powered Job Verification: Jobs tagged as verified to boost trust",
+      "Smart Filters & Sorting: Dynamic filters to personalize search results",
+      "One-Click Application & Save: Simplifies and accelerates user interaction",
+      "Minimalist UI: Focused design with intuitive filter controls and job cards"
+    ],
+
+    careerHubScreenTitle: "Career Hub Screen",
+    careerHubScreenAlt: "Career Hub / Learning Screen Wireframe",
+    careerHubScreenPurpose: "Dedicated upskilling and career growth space with AI-powered advice.",
+    careerHubProblemsLabel: "Problems Addressed:",
+    careerHubSolutionsLabel: "Solutions Delivered:",
+    careerHubProblems: [
+      "Lack of integrated skill development tools: micro-courses and learning paths embedded",
+      "User frustration with skill gaps: personalized course suggestions",
+      "Anxiety about career readiness: resume building, interview prep, career coaching in-app"
+    ],
+    careerHubSolutions: [
+      "Integrated Learning Hub: Courses, progress tracking, and badges within the platform",
+      "AI Career Coaching: Personalized guidance through chat bot",
+      "Resume and Interview Tools: Supports job readiness all in one place"
+    ],
+
+    messagingScreenTitle: "Messaging & Networking",
+    messagingScreenAlt: "Messaging & Networking Screen Wireframe",
+    messagingScreenPurpose: "Built-in messaging tool for recruiter and professional connections.",
+    messagingProblemsLabel: "Problems Addressed:",
+    messagingSolutionsLabel: "Solutions Delivered:",
+    messagingProblems: [
+      "Weak networking & communication tools: in-app messaging with recruiters free of paywalls",
+      "Limited connection visibility: smart suggestions based on user activity",
+      "Difficulty building rapport with recruiters: message templates and status indicators"
+    ],
+    messagingSolutions: [
+      "In-App Messaging: Seamless communication channel without premium fees",
+      "Recruiter & Professional Suggestions: AI-driven connection recommendations",
+      "Enhanced Engagement Tools: Status indicators, message templates for easy outreach"
+    ]
   },
+
   es: {
     userResearch: "Investigación de usuarios",
     painPoints: "Puntos críticos",
@@ -88,8 +162,82 @@ const translations = {
     solutions: "Soluciones",
     lowFidelity: "Prototipos de baja fidelidad",
     highFidelity: "Prototipos de alta fidelidad",
-  },
+
+    screenPurposeLabel: "Propósito de la pantalla:",
+    problemsAddressedLabel: "Problemas abordados:",
+    solutionsDeliveredLabel: "Soluciones entregadas:",
+
+    homeScreenTitle: "Pantalla de inicio",
+    homeScreenAlt: "Wireframe de la pantalla de inicio / panel de control",
+    homeScreenPurpose: "Un centro inteligente y acogedor que proporciona una visión general de tu búsqueda de empleo y acceso rápido a funciones clave.",
+    homeProblemsLabel: "Problemas abordados:",
+    homeSolutionsLabel: "Soluciones entregadas:",
+    homeProblems: [
+      "Personalización y filtrado limitados: recomendaciones de trabajo adaptadas al usuario",
+      "Proceso de aplicación complejo y con muchos pasos: accesos directos de 'Aplicar con 1 clic'",
+      "Visibilidad y competencia limitadas: Spotlight y porcentaje de coincidencia de habilidades destacan mejores opciones",
+      "UX desordenada: el modo de enfoque reduce el ruido visual, los accesos directos mejoran la navegación"
+    ],
+    homeSolutions: [
+      "Recomendaciones personalizadas avanzadas: tarjetas de empleo inteligentes con porcentaje de coincidencia de habilidades",
+      "Aplicación con un solo clic: aplicar directamente desde el panel sin salir",
+      "Spotlight para solicitantes: destaca los mejores empleos para el usuario",
+      "Interfaz minimalista con modo de enfoque: muestra solo empleos verificados destacados",
+      "Accesos rápidos: atajos a CV, empleos guardados, centro de carrera y mensajería"
+    ],
+
+    searchScreenTitle: "Pantalla de búsqueda y filtro de empleos",
+    searchScreenAlt: "Wireframe de búsqueda y filtro de empleos",
+    searchScreenPurpose: "Página de búsqueda potente con filtros inteligentes, resultados en tiempo real y diseño limpio.",
+    searchProblemsLabel: "Problemas abordados:",
+    searchSolutionsLabel: "Soluciones entregadas:",
+    searchProblems: [
+      "Anuncios no verificados o desactualizados: se muestran con insignia de verificado y actualizaciones en tiempo real",
+      "Personalización y filtrado insuficientes: filtros avanzados por modalidad, salario, habilidades, verificados",
+      "Procesos de aplicación complejos: posibilidad de aplicar o guardar directamente desde los resultados",
+      "UI desordenada: diseño limpio con chips de filtros y menú de ordenamiento"
+    ],
+    searchSolutions: [
+      "Verificación de empleos con IA: etiquetas de verificado para mayor confianza",
+      "Filtros inteligentes y ordenamiento: opciones dinámicas para personalizar resultados",
+      "Aplicación y guardado con un clic: interacción más rápida y sencilla",
+      "Interfaz minimalista: diseño enfocado con controles de filtro intuitivos y tarjetas limpias"
+    ],
+
+    careerHubScreenTitle: "Pantalla del centro de carrera",
+    careerHubScreenAlt: "Wireframe del centro de aprendizaje / carrera",
+    careerHubScreenPurpose: "Espacio dedicado al crecimiento profesional con asesoría impulsada por IA.",
+    careerHubProblemsLabel: "Problemas abordados:",
+    careerHubSolutionsLabel: "Soluciones entregadas:",
+    careerHubProblems: [
+      "Falta de herramientas integradas para desarrollo de habilidades: microcursos y rutas de aprendizaje",
+      "Frustración del usuario con brechas de habilidades: sugerencias personalizadas",
+      "Ansiedad por preparación profesional: CV, simulacros de entrevistas, coaching dentro de la app"
+    ],
+    careerHubSolutions: [
+      "Centro de aprendizaje integrado: cursos, seguimiento de progreso y medallas en la plataforma",
+      "Coaching profesional con IA: guía personalizada a través de chatbot",
+      "Herramientas para CV y entrevistas: preparación completa en un solo lugar"
+    ],
+
+    messagingScreenTitle: "Mensajería y networking",
+    messagingScreenAlt: "Wireframe de mensajería y conexiones profesionales",
+    messagingScreenPurpose: "Herramienta integrada para contactar reclutadores y hacer networking profesional.",
+    messagingProblemsLabel: "Problemas abordados:",
+    messagingSolutionsLabel: "Soluciones entregadas:",
+    messagingProblems: [
+      "Herramientas de comunicación débiles: mensajería sin muros de pago",
+      "Visibilidad limitada de conexiones: sugerencias inteligentes basadas en actividad",
+      "Difícil generar conexión con reclutadores: plantillas de mensaje e indicadores de estado"
+    ],
+    messagingSolutions: [
+      "Mensajería integrada: canal directo sin costos premium",
+      "Sugerencias de contactos: recomendaciones impulsadas por IA",
+      "Herramientas de interacción: plantillas, indicadores de estado para facilitar el contacto"
+    ]
+  }
 };
+
 
 
 // =================== CASE STUDY DATA ===================
@@ -903,9 +1051,7 @@ function HighFidelityPrototypes({ language }) {
           observer.disconnect();
         }
       },
-      {
-        threshold: 0.3,
-      }
+      { threshold: 0.3 }
     );
 
     if (sectionRef.current) {
@@ -915,88 +1061,178 @@ function HighFidelityPrototypes({ language }) {
     return () => observer.disconnect();
   }, []);
 
-  const imageStyleBase = {
-    width: "200px",
-    height: "auto",
+  const baseImageStyle = {
+    width: "250px",
     borderRadius: "12px",
     boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
     opacity: 0,
     transform: "translateY(20px)",
-    transitionProperty: "opacity, transform",
-    transitionDuration: "1.2s", // slower animation duration
-    transitionTimingFunction: "ease-out",
+    transition: "opacity 1s ease-out, transform 1s ease-out",
   };
 
   const getImageStyle = (delay) =>
     visible
       ? {
-          ...imageStyleBase,
+          ...baseImageStyle,
           opacity: 1,
           transform: "translateY(0)",
           transitionDelay: `${delay}s`,
         }
-      : imageStyleBase;
+      : baseImageStyle;
+
+  const sectionStyle = {
+    display: "flex",
+    gap: "2em",
+    marginBottom: "3em",
+    flexWrap: "wrap",
+    alignItems: "flex-start",
+  };
+
+  const textStyle = {
+    flex: "1",
+    maxWidth: "500px",
+    lineHeight: "1.6",
+  };
 
   return (
-    <section ref={sectionRef} style={responsiveStyle.card}>
-      <h2 style={responsiveStyle.sectionTitle}>
+    <section ref={sectionRef} style={{ padding: "2em" }}>
+      <h2 style={{ fontSize: "2rem", marginBottom: "1em" }}>
         {translations[language].highFidelity}
       </h2>
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "1.5em",
-          marginTop: "1.5em",
-        }}
-      >
-        {/* Top Row */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "1.5em",
-            flexWrap: "wrap",
-          }}
-        >
-          <img
-            src="../screen/home.png"
-            alt="Home Screen"
-            style={getImageStyle(0)}
-          />
-          <img
-            src="../screen/search.png"
-            alt="Search Screen"
-            style={getImageStyle(0.6)} // longer delay between images
-          />
-        </div>
+      {/* Home Screen */}
+      <div style={sectionStyle}>
+        <img
+          src="/screen/home.png"
+          alt={translations[language].homeScreenAlt}
+          style={getImageStyle(0)}
 
-        {/* Bottom Row */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "1.5em",
-            flexWrap: "wrap",
-          }}
-        >
-          <img
-            src="../screen/careerhub.png"
-            alt="Career Hub Screen"
-            style={getImageStyle(1.2)}
-          />
-          <img
-            src="../screen/chat.png"
-            alt="Chat Screen"
-            style={getImageStyle(1.8)}
-          />
+        />
+        <div style={textStyle}>
+          <h3>{translations[language].homeScreenTitle}</h3>
+          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
+            <strong>{translations[language].screenPurposeLabel}</strong> <br />
+            {translations[language].homeScreenPurpose}
+          </p>
+          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
+            <strong>{translations[language].problemsAddressedLabel}</strong>
+          </p>
+          <ul>
+            {translations[language].homeProblems.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
+            <strong>{translations[language].solutionsDeliveredLabel}</strong>
+          </p>
+          <ul>
+            {translations[language].homeSolutions.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Search Screen */}
+      <div style={sectionStyle}>
+        <img
+          src="/screen/search.png"
+          alt={translations[language].searchScreenAlt}
+          style={getImageStyle(0.3)}
+        />
+        <div style={textStyle}>
+          <h3>{translations[language].searchScreenTitle}</h3>
+          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
+            <strong>{translations[language].screenPurposeLabel}</strong> <br />
+            {translations[language].searchScreenPurpose}
+          </p>
+
+          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
+            <strong>{translations[language].problemsAddressedLabel}</strong>
+          </p>
+          <ul>
+            {translations[language].searchProblems.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
+            <strong>{translations[language].solutionsDeliveredLabel}</strong>
+          </p>
+          <ul>
+            {translations[language].searchSolutions.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Career Hub */}
+      <div style={sectionStyle}>
+        <img
+          src="/screen/careerhub.png"
+          alt={translations[language].careerHubScreenAlt}
+          style={getImageStyle(0.6)}
+        />
+        <div style={textStyle}>
+          <h3>{translations[language].careerHubScreenTitle}</h3>
+          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
+            <strong>{translations[language].screenPurposeLabel}</strong> <br />
+            {translations[language].careerHubScreenPurpose}
+          </p>
+          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
+            <strong>{translations[language].problemsAddressedLabel}</strong>
+          </p>
+          <ul>
+            {translations[language].careerHubProblems.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
+            <strong>{translations[language].solutionsDeliveredLabel}</strong>
+          </p>
+          <ul>
+            {translations[language].careerHubSolutions.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Messaging Screen */}
+      <div style={sectionStyle}>
+        <img
+          src="/screen/chat.png"
+          alt={translations[language].messagingScreenAlt}
+          style={getImageStyle(0.9)}
+        />
+        <div style={textStyle}>
+          <h3>{translations[language].messagingScreenTitle}</h3>
+          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
+            <strong>{translations[language].screenPurposeLabel}</strong> <br />
+            {translations[language].messagingScreenPurpose}
+          </p>
+          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
+            <strong>{translations[language].problemsAddressedLabel}</strong>
+          </p>
+          <ul>
+            {translations[language].messagingProblems.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
+            <strong>{translations[language].solutionsDeliveredLabel}</strong>
+          </p>
+          <ul>
+            {translations[language].messagingSolutions.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
   );
 }
+
 
 
 // ===================== MAIN APP ========================
