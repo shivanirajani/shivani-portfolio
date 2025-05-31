@@ -1060,6 +1060,10 @@ function HighFidelityPrototypes({ language }) {
     lineHeight: "1.6",
   };
 
+  const paragraphStyle = {
+    margin: "1.5em 0",
+  };
+
   return (
     <section style={{ padding: "2em" }}>
       <h2 style={{ fontSize: "2rem", marginBottom: "1em" }}>
@@ -1075,17 +1079,21 @@ function HighFidelityPrototypes({ language }) {
         />
         <div style={textStyle}>
           <h3>{translations[language].homeScreenTitle}</h3>
-          <p>
+          <p style={paragraphStyle}>
             <strong>{translations[language].screenPurposeLabel}</strong><br />
             {translations[language].homeScreenPurpose}
           </p>
-          <p><strong>{translations[language].problemsAddressedLabel}</strong></p>
+          <p style={paragraphStyle}>
+            <strong>{translations[language].problemsAddressedLabel}</strong>
+          </p>
           <ul>
             {translations[language].homeProblems.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
-          <p><strong>{translations[language].solutionsDeliveredLabel}</strong></p>
+          <p style={paragraphStyle}>
+            <strong>{translations[language].solutionsDeliveredLabel}</strong>
+          </p>
           <ul>
             {translations[language].homeSolutions.map((item, idx) => (
               <li key={idx}>{item}</li>
@@ -1103,17 +1111,21 @@ function HighFidelityPrototypes({ language }) {
         />
         <div style={textStyle}>
           <h3>{translations[language].searchScreenTitle}</h3>
-          <p>
+          <p style={paragraphStyle}>
             <strong>{translations[language].screenPurposeLabel}</strong><br />
             {translations[language].searchScreenPurpose}
           </p>
-          <p><strong>{translations[language].problemsAddressedLabel}</strong></p>
+          <p style={paragraphStyle}>
+            <strong>{translations[language].problemsAddressedLabel}</strong>
+          </p>
           <ul>
             {translations[language].searchProblems.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
-          <p><strong>{translations[language].solutionsDeliveredLabel}</strong></p>
+          <p style={paragraphStyle}>
+            <strong>{translations[language].solutionsDeliveredLabel}</strong>
+          </p>
           <ul>
             {translations[language].searchSolutions.map((item, idx) => (
               <li key={idx}>{item}</li>
@@ -1131,17 +1143,21 @@ function HighFidelityPrototypes({ language }) {
         />
         <div style={textStyle}>
           <h3>{translations[language].careerHubScreenTitle}</h3>
-          <p>
+          <p style={paragraphStyle}>
             <strong>{translations[language].screenPurposeLabel}</strong><br />
             {translations[language].careerHubScreenPurpose}
           </p>
-          <p><strong>{translations[language].problemsAddressedLabel}</strong></p>
+          <p style={paragraphStyle}>
+            <strong>{translations[language].problemsAddressedLabel}</strong>
+          </p>
           <ul>
             {translations[language].careerHubProblems.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
-          <p><strong>{translations[language].solutionsDeliveredLabel}</strong></p>
+          <p style={paragraphStyle}>
+            <strong>{translations[language].solutionsDeliveredLabel}</strong>
+          </p>
           <ul>
             {translations[language].careerHubSolutions.map((item, idx) => (
               <li key={idx}>{item}</li>
@@ -1159,17 +1175,21 @@ function HighFidelityPrototypes({ language }) {
         />
         <div style={textStyle}>
           <h3>{translations[language].messagingScreenTitle}</h3>
-          <p>
+          <p style={paragraphStyle}>
             <strong>{translations[language].screenPurposeLabel}</strong><br />
             {translations[language].messagingScreenPurpose}
           </p>
-          <p><strong>{translations[language].problemsAddressedLabel}</strong></p>
+          <p style={paragraphStyle}>
+            <strong>{translations[language].problemsAddressedLabel}</strong>
+          </p>
           <ul>
             {translations[language].messagingProblems.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
-          <p><strong>{translations[language].solutionsDeliveredLabel}</strong></p>
+          <p style={paragraphStyle}>
+            <strong>{translations[language].solutionsDeliveredLabel}</strong>
+          </p>
           <ul>
             {translations[language].messagingSolutions.map((item, idx) => (
               <li key={idx}>{item}</li>
@@ -1180,6 +1200,7 @@ function HighFidelityPrototypes({ language }) {
     </section>
   );
 }
+
 
 
 // ===================== MAIN APP ========================
