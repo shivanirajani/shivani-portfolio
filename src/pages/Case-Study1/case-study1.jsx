@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -313,7 +313,8 @@ const caseStudyData = {
             "User experience can feel cluttered at times.",
           ],
         },
-      ],
+        
+      ]
     },
   },
   es: {
@@ -785,25 +786,214 @@ function CompetitorAnalysis({ language }) {
 }
 
 function LowFidelityPrototypes({ language }) {
-  const data = caseStudyData[language];
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const imageStyleBase = {
+    width: "200px",
+    height: "auto",
+    borderRadius: "12px",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+    opacity: 0,
+    transform: "translateY(20px)",
+    transitionProperty: "opacity, transform",
+    transitionDuration: "1.2s", // slower animation duration
+    transitionTimingFunction: "ease-out",
+  };
+
+  const getImageStyle = (delay) =>
+    visible
+      ? {
+          ...imageStyleBase,
+          opacity: 1,
+          transform: "translateY(0)",
+          transitionDelay: `${delay}s`,
+        }
+      : imageStyleBase;
 
   return (
-    <section style={responsiveStyle.card}>
+    <section ref={sectionRef} style={responsiveStyle.card}>
       <h2 style={responsiveStyle.sectionTitle}>
         {translations[language].lowFidelity}
       </h2>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "1.5em",
+          marginTop: "1.5em",
+        }}
+      >
+        {/* Top Row */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "1.5em",
+            flexWrap: "wrap",
+          }}
+        >
+          <img
+            src="../screen/home-lofi.png"
+            alt="Home Screen"
+            style={getImageStyle(0)}
+          />
+          <img
+            src="../screen/search-lofi.png"
+            alt="Search Screen"
+            style={getImageStyle(0.6)} // longer delay between images
+          />
+        </div>
+
+        {/* Bottom Row */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "1.5em",
+            flexWrap: "wrap",
+          }}
+        >
+          <img
+            src="../screen/careerhub-lofi.png"
+            alt="Career Hub Screen"
+            style={getImageStyle(1.2)}
+          />
+          <img
+            src="../screen/chat-lofi.png"
+            alt="Chat Screen"
+            style={getImageStyle(1.8)}
+          />
+        </div>
+      </div>
     </section>
   );
 }
-
 function HighFidelityPrototypes({ language }) {
-  const data = caseStudyData[language];
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const imageStyleBase = {
+    width: "200px",
+    height: "auto",
+    borderRadius: "12px",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+    opacity: 0,
+    transform: "translateY(20px)",
+    transitionProperty: "opacity, transform",
+    transitionDuration: "1.2s", // slower animation duration
+    transitionTimingFunction: "ease-out",
+  };
+
+  const getImageStyle = (delay) =>
+    visible
+      ? {
+          ...imageStyleBase,
+          opacity: 1,
+          transform: "translateY(0)",
+          transitionDelay: `${delay}s`,
+        }
+      : imageStyleBase;
 
   return (
-    <section style={responsiveStyle.card}>
+    <section ref={sectionRef} style={responsiveStyle.card}>
       <h2 style={responsiveStyle.sectionTitle}>
         {translations[language].highFidelity}
       </h2>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "1.5em",
+          marginTop: "1.5em",
+        }}
+      >
+        {/* Top Row */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "1.5em",
+            flexWrap: "wrap",
+          }}
+        >
+          <img
+            src="../screen/home.png"
+            alt="Home Screen"
+            style={getImageStyle(0)}
+          />
+          <img
+            src="../screen/search.png"
+            alt="Search Screen"
+            style={getImageStyle(0.6)} // longer delay between images
+          />
+        </div>
+
+        {/* Bottom Row */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "1.5em",
+            flexWrap: "wrap",
+          }}
+        >
+          <img
+            src="../screen/careerhub.png"
+            alt="Career Hub Screen"
+            style={getImageStyle(1.2)}
+          />
+          <img
+            src="../screen/chat.png"
+            alt="Chat Screen"
+            style={getImageStyle(1.8)}
+          />
+        </div>
+      </div>
     </section>
   );
 }
