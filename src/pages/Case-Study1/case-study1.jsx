@@ -1103,7 +1103,7 @@ function HighFidelityPrototypes({ language }) {
       {/* Home Screen */}
       <div style={sectionStyle}>
         <img
-          src="/screen/home.png"
+          src="/home.png"
           alt={translations[language].homeScreenAlt}
           style={getImageStyle(0)}
         />
@@ -1135,7 +1135,7 @@ function HighFidelityPrototypes({ language }) {
       {/* Search Screen */}
       <div style={sectionStyle}>
         <img
-          src="/screen/search.png"
+          src="/search.png"
           alt={translations[language].searchScreenAlt}
           style={getImageStyle(0.3)}
         />
@@ -1168,7 +1168,7 @@ function HighFidelityPrototypes({ language }) {
       {/* Career Hub */}
       <div style={sectionStyle}>
         <img
-          src="/screen/careerhub.png"
+          src="/careerhub.png"
           alt={translations[language].careerHubScreenAlt}
           style={getImageStyle(0.6)}
         />
@@ -1200,7 +1200,7 @@ function HighFidelityPrototypes({ language }) {
       {/* Messaging Screen */}
       <div style={sectionStyle}>
         <img
-          src="/screen/chat.png"
+          src="/chat.png"
           alt={translations[language].messagingScreenAlt}
           style={getImageStyle(0.9)}
         />
