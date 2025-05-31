@@ -1040,45 +1040,11 @@ function LowFidelityPrototypes({ language }) {
   );
 }
 function HighFidelityPrototypes({ language }) {
-  const sectionRef = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   const baseImageStyle = {
     width: "250px",
     borderRadius: "12px",
     boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-    opacity: 0,
-    transform: "translateY(20px)",
-    transition: "opacity 1s ease-out, transform 1s ease-out",
   };
-
-  const getImageStyle = (delay) =>
-    visible
-      ? {
-          ...baseImageStyle,
-          opacity: 1,
-          transform: "translateY(0)",
-          transitionDelay: `${delay}s`,
-        }
-      : baseImageStyle;
 
   const sectionStyle = {
     display: "flex",
@@ -1095,7 +1061,7 @@ function HighFidelityPrototypes({ language }) {
   };
 
   return (
-    <section ref={sectionRef} style={{ padding: "2em" }}>
+    <section style={{ padding: "2em" }}>
       <h2 style={{ fontSize: "2rem", marginBottom: "1em" }}>
         {translations[language].highFidelity}
       </h2>
@@ -1105,25 +1071,21 @@ function HighFidelityPrototypes({ language }) {
         <img
           src="/home.png"
           alt={translations[language].homeScreenAlt}
-          style={getImageStyle(0)}
+          style={baseImageStyle}
         />
         <div style={textStyle}>
           <h3>{translations[language].homeScreenTitle}</h3>
-          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-            <strong>{translations[language].screenPurposeLabel}</strong> <br />
+          <p>
+            <strong>{translations[language].screenPurposeLabel}</strong><br />
             {translations[language].homeScreenPurpose}
           </p>
-          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-            <strong>{translations[language].problemsAddressedLabel}</strong>
-          </p>
+          <p><strong>{translations[language].problemsAddressedLabel}</strong></p>
           <ul>
             {translations[language].homeProblems.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
-          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-            <strong>{translations[language].solutionsDeliveredLabel}</strong>
-          </p>
+          <p><strong>{translations[language].solutionsDeliveredLabel}</strong></p>
           <ul>
             {translations[language].homeSolutions.map((item, idx) => (
               <li key={idx}>{item}</li>
@@ -1137,26 +1099,21 @@ function HighFidelityPrototypes({ language }) {
         <img
           src="/search.png"
           alt={translations[language].searchScreenAlt}
-          style={getImageStyle(0.3)}
+          style={baseImageStyle}
         />
         <div style={textStyle}>
           <h3>{translations[language].searchScreenTitle}</h3>
-          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-            <strong>{translations[language].screenPurposeLabel}</strong> <br />
+          <p>
+            <strong>{translations[language].screenPurposeLabel}</strong><br />
             {translations[language].searchScreenPurpose}
           </p>
-
-          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-            <strong>{translations[language].problemsAddressedLabel}</strong>
-          </p>
+          <p><strong>{translations[language].problemsAddressedLabel}</strong></p>
           <ul>
             {translations[language].searchProblems.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
-          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-            <strong>{translations[language].solutionsDeliveredLabel}</strong>
-          </p>
+          <p><strong>{translations[language].solutionsDeliveredLabel}</strong></p>
           <ul>
             {translations[language].searchSolutions.map((item, idx) => (
               <li key={idx}>{item}</li>
@@ -1170,25 +1127,21 @@ function HighFidelityPrototypes({ language }) {
         <img
           src="/careerhub.png"
           alt={translations[language].careerHubScreenAlt}
-          style={getImageStyle(0.6)}
+          style={baseImageStyle}
         />
         <div style={textStyle}>
           <h3>{translations[language].careerHubScreenTitle}</h3>
-          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-            <strong>{translations[language].screenPurposeLabel}</strong> <br />
+          <p>
+            <strong>{translations[language].screenPurposeLabel}</strong><br />
             {translations[language].careerHubScreenPurpose}
           </p>
-          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-            <strong>{translations[language].problemsAddressedLabel}</strong>
-          </p>
+          <p><strong>{translations[language].problemsAddressedLabel}</strong></p>
           <ul>
             {translations[language].careerHubProblems.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
-          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-            <strong>{translations[language].solutionsDeliveredLabel}</strong>
-          </p>
+          <p><strong>{translations[language].solutionsDeliveredLabel}</strong></p>
           <ul>
             {translations[language].careerHubSolutions.map((item, idx) => (
               <li key={idx}>{item}</li>
@@ -1202,25 +1155,21 @@ function HighFidelityPrototypes({ language }) {
         <img
           src="/chat.png"
           alt={translations[language].messagingScreenAlt}
-          style={getImageStyle(0.9)}
+          style={baseImageStyle}
         />
         <div style={textStyle}>
           <h3>{translations[language].messagingScreenTitle}</h3>
-          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-            <strong>{translations[language].screenPurposeLabel}</strong> <br />
+          <p>
+            <strong>{translations[language].screenPurposeLabel}</strong><br />
             {translations[language].messagingScreenPurpose}
           </p>
-          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-            <strong>{translations[language].problemsAddressedLabel}</strong>
-          </p>
+          <p><strong>{translations[language].problemsAddressedLabel}</strong></p>
           <ul>
             {translations[language].messagingProblems.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
-          <p style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-            <strong>{translations[language].solutionsDeliveredLabel}</strong>
-          </p>
+          <p><strong>{translations[language].solutionsDeliveredLabel}</strong></p>
           <ul>
             {translations[language].messagingSolutions.map((item, idx) => (
               <li key={idx}>{item}</li>
@@ -1231,8 +1180,6 @@ function HighFidelityPrototypes({ language }) {
     </section>
   );
 }
-
-
 
 
 // ===================== MAIN APP ========================
