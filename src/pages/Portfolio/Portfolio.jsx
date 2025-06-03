@@ -359,6 +359,27 @@ const Portfolio = () => {
           background-color: #b4afe9;
           color: white;
         }
+          .project-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .project-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.project-item {
+  background-color:rgba(198, 193, 255, 0.35);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
       `}</style>
     </section>
   );
