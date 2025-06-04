@@ -246,7 +246,7 @@ const Aside = () => {
               </div>
               <div className="contact-info">
                 <p className="contact-title">Address/Dirección</p>
-                <address>Newcastle upon Tyne</address>
+                <address>Las Palmas de Gran Canaria</address>
               </div>
             </li>
 
