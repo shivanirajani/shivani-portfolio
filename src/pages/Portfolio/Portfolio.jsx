@@ -374,10 +374,10 @@ const Portfolio = () => {
 }
 
 .project-item {
-  background-color:rgba(198, 193, 255, 0.35);
+  background-color:rgba(37, 37, 37, 0.35);
   border-radius: 12px;
   padding: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: transparent 0 0 0 1px, rgba(0, 0, 0, 0.1) 0 2px 4px;
 }
 
       `}</style>
