@@ -57,8 +57,25 @@
     },
     "techStack": ["Figma", "Microsoft Forms", "Miro"],
     "url": "/portfolio/casestudy"
+  },
+  {
+    "id": 5,
+    "title": { 
+      "en": "Lãberit: ADA – AI CRM App UI/UX Design",  
+      "es": "Lãberit: ADA – Diseño UI/UX de Aplicación CRM con IA"  
+    },
+    "image": "screen/ada.png",
+    "category": "UI/UX Design",
+    "description": {
+      
+        "en": "Designed a mobile-responsive prototype of an AI-powered CRM app called ADA in Figma. Focused on a seamless user experience with features like an integrated AI chatbot, smart meeting scheduling, and custom offer creation. Built intuitive dashboards, clean UI components, and a scalable design system optimized for all devices.",
+        
+        "es": "Diseñé en Figma un prototipo móvil de una aplicación CRM con inteligencia artificial llamada ADA. Incluye funciones como chatbot con IA, programación de reuniones y creación de ofertas. El diseño se enfoca en una experiencia de usuario fluida, con componentes visuales claros y un sistema de diseño escalable."
+      
+      
+    },
+    "techStack": ["Figma"],
+    "url": "https://www.figma.com/design/3f76WGF6bf1EZ8C46TtjmP/L%C3%A3berit--AI-CRM-App-ADA?node-id=0-1&t=iL0ElQtsJtjbKMpz-1"
   }
-  
-  
   
 ]

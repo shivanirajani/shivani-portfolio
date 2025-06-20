@@ -185,38 +185,41 @@ const Portfolio = () => {
                     </figure>
 
                     <div className="project-icons">
-                      {project.url && project.id !== 3 && (
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title={content[language].tooltips.viewProject}
-                          className="icon-link"
-                        >
-                          <FaRegEye size={20} />
-                        </a>
-                      )}
+  {project.url && project.id !== 3 && (
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={content[language].tooltips.viewProject}
+      className="icon-link"
+    >
+      <FaRegEye size={20} />
+    </a>
+  )}
 
-                      <a
-                        href={project.repo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={content[language].tooltips.viewRepo}
-                        className="icon-link"
-                      >
-                        <FaGithub size={20} />
-                      </a>
+  {project.id !== 5 && project.repo && (
+    <a
+      href={project.repo}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={content[language].tooltips.viewRepo}
+      className="icon-link"
+    >
+      <FaGithub size={20} />
+    </a>
+  )}
 
-                      {project.video && (
-                        <button
-                          onClick={() => setVideoToShow(project.video)}
-                          title={content[language].tooltips.watchVideo}
-                          className="icon-button"
-                        >
-                          <FaVideo size={20} />
-                        </button>
-                      )}
-                    </div>
+  {project.video && (
+    <button
+      onClick={() => setVideoToShow(project.video)}
+      title={content[language].tooltips.watchVideo}
+      className="icon-button"
+    >
+      <FaVideo size={20} />
+    </button>
+  )}
+</div>
+
                   </div>
 
                   <h3 className="project-title">{project.title[language]}</h3>
