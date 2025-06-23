@@ -82,7 +82,7 @@
     "image": "screen/app.png",
     "category": "UI/UX Design",
     "description": {
-      "en": "Designed a mobile-responsive app focused on physiotherapy and nutrition services. Users can register, log in, and easily request appointments by selecting a hospital, doctor, service type (physiotherapy or nutrition), preferred date, and time range. The app also includes integrated payment functionality to complete the booking process.",
+      "en": "Designed a mobile-responsive app focused on physiotherapy and nutrition services. Users can register, log in, and easily book appointments by selecting a hospital, doctor, service type (physiotherapy or nutrition), preferred date, and time. The app also includes integrated payment functionality to complete the booking process.",
       "es": "Diseñé una aplicación móvil centrada en servicios de fisioterapia y nutrición. Los usuarios pueden registrarse, iniciar sesión y solicitar citas eligiendo hospital, médico, tipo de servicio (fisioterapia o nutrición), fecha y franja horaria preferida. La app incluye una funcionalidad de pago integrada para completar la reserva."
     },
     "techStack": ["Figma"],
