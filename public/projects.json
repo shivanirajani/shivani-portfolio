@@ -61,8 +61,8 @@
   {
     "id": 5,
     "title": { 
-      "en": "Lãberit: ADA – AI CRM App UI/UX Design",  
-      "es": "Lãberit: ADA – Diseño UI/UX de Aplicación CRM con IA"  
+      "en": "ADA – AI CRM App UI/UX Design",  
+      "es": "ADA – Diseño UI/UX de Aplicación CRM con IA"  
     },
     "image": "screen/ada.png",
     "category": "UI/UX Design",
@@ -76,8 +76,8 @@
   {
     "id": 6,
     "title": { 
-      "en": "Lãberit: Fisiotherapy & Nutrition App UI/UX Design",  
-      "es": "Lãberit: Diseño UI/UX de la App de Fisioterapia y Nutrición"  
+      "en": "Fisiotherapy & Nutrition App UI/UX Design",  
+      "es": "Diseño UI/UX de la App de Fisioterapia y Nutrición"  
     },
     "image": "screen/app.png",
     "category": "UI/UX Design",
