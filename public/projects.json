@@ -42,51 +42,6 @@
     },
     "techStack": ["React","Node.js", "Express.js", "Chart.js", "ESLint","Framer Motion"]
     
-  },
-  {
-    "id": 4,
-    "title": { 
-      "en": "UX Case Study: Jobify", 
-      "es": "Estudio de Caso UX: Jobify" 
-    },
-    "image": "screen/thumbnail.png",
-    "category": "UI/UX Design",
-    "description": {
-      "en": "A modern job hunting app that streamlines your search with verified listings, personalised job matches, and career growth tools to help you find your next opportunity faster and smarter.",
-      "es": "Una aplicación moderna para buscar empleo que optimiza tu búsqueda con ofertas verificadas, coincidencias personalizadas y herramientas de crecimiento profesional para ayudarte a encontrar tu próxima oportunidad más rápido e inteligentemente."
-    },
-    "techStack": ["Figma", "Microsoft Forms", "Miro"],
-    "url": "/portfolio/casestudy"
-  },
-  {
-    "id": 5,
-    "title": { 
-      "en": "ADA – AI CRM App UI/UX Design",  
-      "es": "ADA – Diseño UI/UX de Aplicación CRM con IA"  
-    },
-    "image": "screen/ada.png",
-    "category": "UI/UX Design",
-    "description": {
-      "en": "Designed a mobile-responsive prototype of an AI-powered CRM app called ADA. Focused on a seamless user experience with features like an integrated AI chatbot, smart meeting scheduling, and custom offer creation. Built intuitive dashboards and clean UI components within a scalable design system.",
-      "es": "Diseñé un prototipo móvil de una aplicación CRM con inteligencia artificial llamada ADA. Incluye funciones como chatbot con IA, programación de reuniones y creación de ofertas. El diseño se enfoca en una experiencia de usuario fluida, con componentes visuales claros y un sistema de diseño escalable."
-    },
-    "techStack": ["Figma"],
-    "url": "https://www.figma.com/design/3f76WGF6bf1EZ8C46TtjmP/L%C3%A3berit--AI-CRM-App-ADA?node-id=0-1&t=iL0ElQtsJtjbKMpz-1"
-  },
-  {
-    "id": 6,
-    "title": { 
-      "en": "Fisiotherapy & Nutrition App UI/UX Design",  
-      "es": "Diseño UI/UX de la App de Fisioterapia y Nutrición"  
-    },
-    "image": "screen/app.png",
-    "category": "UI/UX Design",
-    "description": {
-      "en": "Designed a mobile-responsive app focused on physiotherapy and nutrition services. Users can register, log in, and easily book appointments by selecting a hospital, doctor, service type (physiotherapy or nutrition), preferred date, and time. The app also includes integrated payment functionality to complete the booking process.",
-      "es": "Diseñé una aplicación móvil centrada en servicios de fisioterapia y nutrición. Los usuarios pueden registrarse, iniciar sesión y solicitar citas eligiendo hospital, médico, tipo de servicio (fisioterapia o nutrición), fecha y franja horaria preferida. La app incluye una funcionalidad de pago integrada para completar la reserva."
-    },
-    "techStack": ["Figma"],
-    "url": "https://www.figma.com/design/2AksgUu8lCtUBn6qho49Xg/Untitled?node-id=0-1&t=Thhy7VBjt7eteEYl-1"
   }
-  
+
 ]
