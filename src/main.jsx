@@ -7,35 +7,32 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Portfolio from './pages/Portfolio/Portfolio.jsx';
 
+import Portfolio from './pages/Portfolio/Portfolio.jsx';
 import Resume from './pages/Resume/Resume.jsx';
 import About from './pages/About/About.jsx';
 import Contact from './pages/Contact/Contact.jsx';
-import CaseStudy from './pages/Case-Study1/case-study1.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     children: [
       {
         path: "/",
-        element: <About/>,
+        element: <About />,
       },
       {
         path: "/resume",
-        element: <Resume/>,
+        element: <Resume />,
       },
       {
         path: "/portfolio",
-        element: <Portfolio/>,
+        element: <Portfolio />,
       },
-      { path: "/portfolio/casestudy", element: <CaseStudy/> },  // new route
-    
       {
         path: "/contact",
-        element: <Contact/>
+        element: <Contact />
       }
     ]
   },
