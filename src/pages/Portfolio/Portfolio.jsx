@@ -8,7 +8,6 @@ const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [language, setLanguage] = useState('en');
   const [videoToShow, setVideoToShow] = useState(null);
-
   const [fade, setFade] = useState(true);
 
   const navigate = useNavigate(); // hook for navigation
@@ -17,8 +16,10 @@ const Portfolio = () => {
     fetch('/projects.json')
       .then(response => response.json())
       .then(data => {
-        setProjects(data);
-        setFilteredProjects(data);
+        // Remove projects with IDs 4, 5, and 6
+        const filteredData = data.filter(project => ![4, 5, 6].includes(project.id));
+        setProjects(filteredData);
+        setFilteredProjects(filteredData);
       })
       .catch(error => console.error('Error loading project data:', error));
   }, []);
@@ -68,14 +69,6 @@ const Portfolio = () => {
       setLanguage(prevLang => (prevLang === 'en' ? 'es' : 'en'));
       setFade(true);
     }, 300);
-  };
-
-  // Handle click on project item
-  const handleProjectClick = (project) => {
-    if (project.id === 4) {
-      // Redirect to /portfolio/casestudy
-      navigate('/portfolio/casestudy');
-    }
   };
 
   return (
@@ -135,107 +128,65 @@ const Portfolio = () => {
               data-category={project.category}
               key={project.id}
             >
-              {project.id === 4 ? (
-                // For project with id 4, make the entire card clickable for redirect
-                <button
-                  onClick={() => handleProjectClick(project)}
-                  style={{
-                    all: 'unset',
-                    cursor: 'pointer',
-                    display: 'block',
-                    width: '100%',
-                    textAlign: 'left',
-                  }}
-                  aria-label={`Go to case study for ${project.title[language]}`}
-                >
-                  <div className="project-image-container">
-                    <figure>
-                      <img
-                        src={project.image}
-                        alt={project.title[language]}
-                        loading="lazy"
-                        className="project-image"
-                      />
-                    </figure>
-                  </div>
+              <div className="project-image-container">
+                <figure>
+                  <img
+                    src={project.image}
+                    alt={project.title[language]}
+                    loading="lazy"
+                    className="project-image"
+                  />
+                </figure>
 
-                  <h3 className="project-title">{project.title[language]}</h3>
-                  <p className="project-category">
-                    {content[language].categoryTranslations[project.category] || project.category}
-                  </p>
+                <div className="project-icons">
+                  {project.url && project.id !== 3 && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={content[language].tooltips.viewProject}
+                      className="icon-link"
+                    >
+                      <FaRegEye size={20} />
+                    </a>
+                  )}
 
-                  <p className="project-description" style={{ marginLeft: '10px' }}>{project.description[language]}</p>
+                  {project.repo && (
+                    <a
+                      href={project.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={content[language].tooltips.viewRepo}
+                      className="icon-link"
+                    >
+                      <FaGithub size={20} />
+                    </a>
+                  )}
 
-                  <ul className="tech-stack-list" style={{ marginLeft: '10px' }}>
-                    {project.techStack.map((tech, index) => (
-                      <li key={index} className="tech-stack-item">{tech}</li>
-                    ))}
-                  </ul>
-                </button>
-              ) : (
-                <>
-                  <div className="project-image-container">
-                    <figure>
-                      <img
-                        src={project.image}
-                        alt={project.title[language]}
-                        loading="lazy"
-                        className="project-image"
-                      />
-                    </figure>
+                  {project.video && (
+                    <button
+                      onClick={() => setVideoToShow(project.video)}
+                      title={content[language].tooltips.watchVideo}
+                      className="icon-button"
+                    >
+                      <FaVideo size={20} />
+                    </button>
+                  )}
+                </div>
+              </div>
 
-                    <div className="project-icons">
-  {project.url && project.id !== 3 && (
-    <a
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      title={content[language].tooltips.viewProject}
-      className="icon-link"
-    >
-      <FaRegEye size={20} />
-    </a>
-  )}
+              <h3 className="project-title">{project.title[language]}</h3>
+              <p className="project-category">
+                {content[language].categoryTranslations[project.category] || project.category}
+              </p>
 
-  {project.id !== 5 && project.repo && (
-    <a
-      href={project.repo}
-      target="_blank"
-      rel="noopener noreferrer"
-      title={content[language].tooltips.viewRepo}
-      className="icon-link"
-    >
-      <FaGithub size={20} />
-    </a>
-  )}
+              <p className="project-description" style={{ marginLeft: '10px' }}>{project.description[language]}</p>
 
-  {project.video && (
-    <button
-      onClick={() => setVideoToShow(project.video)}
-      title={content[language].tooltips.watchVideo}
-      className="icon-button"
-    >
-      <FaVideo size={20} />
-    </button>
-  )}
-</div>
-
-                  </div>
-
-                  <h3 className="project-title">{project.title[language]}</h3>
-                  <p className="project-category">
-                    {content[language].categoryTranslations[project.category] || project.category}
-                  </p>
-
-                  <p className="project-description" style={{ marginLeft: '10px' }}>{project.description[language]}</p>
-
-                  <ul className="tech-stack-list" style={{ marginLeft: '10px' }}>
-                    {project.techStack.map((tech, index) => (
-                      <li key={index} className="tech-stack-item">{tech}</li>
-                    ))}
-                  </ul>
-                </>
-              )}
+              <ul className="tech-stack-list" style={{ marginLeft: '10px' }}>
+                {project.techStack.map((tech, index) => (
+                  <li key={index} className="tech-stack-item">{tech}</li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>
@@ -261,7 +212,6 @@ const Portfolio = () => {
           position: relative;
           display: inline-block;
         }
-   
         .project-image {
           height: 150px;
           display: block;
@@ -362,27 +312,24 @@ const Portfolio = () => {
           background-color: #b4afe9;
           color: white;
         }
+        .project-list {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+          padding: 0;
+          list-style: none;
+        }
+        @media (min-width: 768px) {
           .project-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 0;
-  list-style: none;
-}
-
-@media (min-width: 768px) {
-  .project-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.project-item {
-  background-color:rgba(37, 37, 37, 0.35);
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: transparent 0 0 0 1px, rgba(0, 0, 0, 0.1) 0 2px 4px;
-}
-
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        .project-item {
+          background-color:rgba(37, 37, 37, 0.35);
+          border-radius: 12px;
+          padding: 16px;
+          box-shadow: transparent 0 0 0 1px, rgba(0, 0, 0, 0.1) 0 2px 4px;
+        }
       `}</style>
     </section>
   );
