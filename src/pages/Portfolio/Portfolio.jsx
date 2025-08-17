@@ -37,10 +37,10 @@ const Portfolio = () => {
   const content = {
     en: {
       title: "Portfolio",
-      categories: ["All", "Web Development", "UI/UX Design"],
+      categories: ["All", "Web Development", "Data Science"],
       categoryTranslations: {
         "Web Development": "Web Development",
-        "UI/UX Design": "UI/UX Design"
+        "Data Science": "Data Science"
       },
       tooltips: {
         viewProject: "View Project",
@@ -50,10 +50,10 @@ const Portfolio = () => {
     },
     es: {
       title: "Portfolio",
-      categories: ["Todos", "Desarrollo Web", "Diseño UI/UX"],
+      categories: ["Todos", "Desarrollo Web", "Ciencia de Datos"],
       categoryTranslations: {
         "Web Development": "Desarrollo Web",
-        "UI/UX Design": "Diseño UI/UX"
+        "Data Science": "Ciencia de Datos"
       },
       tooltips: {
         viewProject: "Ver Proyecto",
