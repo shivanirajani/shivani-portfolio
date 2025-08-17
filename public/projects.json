@@ -51,10 +51,11 @@
   "url": null,
   "repo": "https://github.com/shivanirajani/data-visualisation",
   "video": null,
-  "description": {
-    "en": "An interactive data visualization dashboard built using Python (Pandas, NumPy) and Vega-Altair to make global country statistics accessible to the general public. The project involved data cleaning and preprocessing of a Kaggle dataset with 195 countries and 36 indicators, selecting and justifying key attributes, and creating multiple coordinated views for exploration, comparison, and statistical insight. The dashboard includes interactive features such as filtering and hover effects, and follows visualization and UX design principles, including Gestalt theory, color theory, usability heuristics, and design-thinking approaches to create a user-friendly experience for non-technical audiences. Deliverables include a standalone HTML dashboard, Python/Jupyter code, and a reflective report analyzing design choices and potential improvements.",
-    "es": "Un panel de visualización de datos interactivo desarrollado con Python (Pandas, NumPy) y Vega-Altair, diseñado para hacer accesibles al público general las estadísticas globales por país. El proyecto incluyó limpieza y preprocesamiento de un conjunto de datos de Kaggle con 195 países y 36 indicadores, selección y justificación de atributos clave, y creación de múltiples vistas coordinadas para exploración, comparación y obtención de patrones estadísticos. El panel incluye funciones interactivas como filtros y efectos al pasar el cursor, y sigue principios de visualización y UX, incluyendo teoría de la Gestalt, uso del color, heurísticas de usabilidad y enfoques de design thinking para crear una experiencia amigable para usuarios no técnicos. Entregables incluyen un panel HTML autónomo, código Python/Jupyter y un informe reflexivo sobre las elecciones de diseño y posibles mejoras."
-  },
+ "description": {
+  "en": "Interactive data dashboard using Python and Vega-Altair, with data cleaning, preprocessing, and exploratory analysis. Deliverables: cleaned datasets, visualizations, and summary of key insights.",
+  "es": "Panel interactivo con Python y Vega-Altair, con limpieza, preprocesamiento y análisis exploratorio de datos. Entregables: datasets limpios, visualizaciones y resumen de insights clave."
+},
+
   "techStack": ["Python", "Jupyter Notebook", "Pandas", "NumPy", "Vega-Altair", "Data Cleaning", "Interactive Visualization", "Dashboard Design", "UX Design", "Design Thinking"]
 }
 

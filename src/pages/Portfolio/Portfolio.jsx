@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaRegEye, FaGithub, FaVideo } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom'; // assuming you use react-router
+import { useNavigate } from 'react-router-dom';
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -10,29 +10,17 @@ const Portfolio = () => {
   const [videoToShow, setVideoToShow] = useState(null);
   const [fade, setFade] = useState(true);
 
-  const navigate = useNavigate(); // hook for navigation
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('/projects.json')
-      .then(response => response.json())
-      .then(data => {
-        // Remove projects with IDs 4, 5, and 6
-        const filteredData = data.filter(project => ![4, 5, 6].includes(project.id));
-        setProjects(filteredData);
-        setFilteredProjects(filteredData);
+      .then((response) => response.json())
+      .then((data) => {
+        setProjects(data);
+        setFilteredProjects(data);
       })
-      .catch(error => console.error('Error loading project data:', error));
+      .catch((error) => console.error('Error loading project data:', error));
   }, []);
-
-  const handleFilterClick = (category) => {
-    setSelectedCategory(category);
-    if (category === 'All' || category === 'Todos') {
-      setFilteredProjects(projects);
-    } else {
-      const filtered = projects.filter(project => project.category === category);
-      setFilteredProjects(filtered);
-    }
-  };
 
   const content = {
     en: {
@@ -63,10 +51,27 @@ const Portfolio = () => {
     }
   };
 
+  // Fix filtering to handle translations
+  const handleFilterClick = (category) => {
+    setSelectedCategory(category);
+
+    if (category === content[language].categories[0]) {
+      // "All" or "Todos"
+      setFilteredProjects(projects);
+    } else {
+      // Map translated category back to project category
+      const projectCategory = Object.entries(content[language].categoryTranslations)
+        .find(([key, value]) => value === category)?.[0] || category;
+
+      const filtered = projects.filter((project) => project.category === projectCategory);
+      setFilteredProjects(filtered);
+    }
+  };
+
   const toggleLanguage = () => {
     setFade(false);
     setTimeout(() => {
-      setLanguage(prevLang => (prevLang === 'en' ? 'es' : 'en'));
+      setLanguage((prevLang) => (prevLang === 'en' ? 'es' : 'en'));
       setFade(true);
     }, 300);
   };
@@ -121,7 +126,7 @@ const Portfolio = () => {
 
       <section className="projects">
         <ul className="project-list">
-          {filteredProjects.map(project => (
+          {filteredProjects.map((project) => (
             <li
               className="project-item active"
               data-filter-item
@@ -180,7 +185,9 @@ const Portfolio = () => {
                 {content[language].categoryTranslations[project.category] || project.category}
               </p>
 
-              <p className="project-description" style={{ marginLeft: '10px' }}>{project.description[language]}</p>
+              <p className="project-description" style={{ marginLeft: '10px' }}>
+                {project.description[language]}
+              </p>
 
               <ul className="tech-stack-list" style={{ marginLeft: '10px' }}>
                 {project.techStack.map((tech, index) => (
@@ -191,6 +198,7 @@ const Portfolio = () => {
           ))}
         </ul>
       </section>
+
 
       {videoToShow && (
         <div
