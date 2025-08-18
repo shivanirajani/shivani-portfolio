@@ -57,7 +57,24 @@
 },
 
   "techStack": ["Python", "Jupyter Notebook", "Pandas", "NumPy", "Vega-Altair", "Data Cleaning", "Interactive Visualization", "Dashboard Design", "UX Design", "Design Thinking"]
-}
+},
+{
+    "id": 5,
+    "title": { 
+      "en": "UX Case Study: Jobify", 
+      "es": "Estudio de Caso UX: Jobify" 
+    },
+    "image": "screen/thumbnail.png",
+    "category": "UI/UX",
+    "description": {
+      "en": "A modern job hunting app that streamlines your search with verified listings, personalised job matches, and career growth tools to help you find your next opportunity faster and smarter.",
+      "es": "Una aplicación moderna para buscar empleo que optimiza tu búsqueda con ofertas verificadas, coincidencias personalizadas y herramientas de crecimiento profesional para ayudarte a encontrar tu próxima oportunidad más rápido e inteligentemente."
+    },
+    "techStack": ["Figma", "Microsoft Forms", "Miro"],
+    "url": "/portfolio/casestudy"
+  }
+  
+ 
 
 
 ]

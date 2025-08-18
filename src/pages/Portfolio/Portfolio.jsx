@@ -23,33 +23,36 @@ const Portfolio = () => {
   }, []);
 
   const content = {
-    en: {
-      title: "Portfolio",
-      categories: ["All", "Web Development", "Data Science"],
-      categoryTranslations: {
-        "Web Development": "Web Development",
-        "Data Science": "Data Science"
-      },
-      tooltips: {
-        viewProject: "View Project",
-        viewRepo: "View Repository",
-        watchVideo: "Watch Demo Video"
-      }
+  en: {
+    title: "Portfolio",
+    categories: ["All", "Web Development", "Data Science", "UI/UX"],
+    categoryTranslations: {
+      "Web Development": "Web Development",
+      "Data Science": "Data Science",
+      "UI/UX": "UI/UX"
     },
-    es: {
-      title: "Portfolio",
-      categories: ["Todos", "Desarrollo Web", "Ciencia de Datos"],
-      categoryTranslations: {
-        "Web Development": "Desarrollo Web",
-        "Data Science": "Ciencia de Datos"
-      },
-      tooltips: {
-        viewProject: "Ver Proyecto",
-        viewRepo: "Ver Repositorio",
-        watchVideo: "Ver Video de Demostración"
-      }
+    tooltips: {
+      viewProject: "View Project",
+      viewRepo: "View Repository",
+      watchVideo: "Watch Demo Video"
     }
-  };
+  },
+  es: {
+    title: "Portfolio",
+    categories: ["Todos", "Desarrollo Web", "Ciencia de Datos", "UI/UX"],
+    categoryTranslations: {
+      "Web Development": "Desarrollo Web",
+      "Data Science": "Ciencia de Datos",
+      "UI/UX": "UI/UX"
+    },
+    tooltips: {
+      viewProject: "Ver Proyecto",
+      viewRepo: "Ver Repositorio",
+      watchVideo: "Ver Video de Demostración"
+    }
+  }
+};
+
 
   // Fix filtering to handle translations
   const handleFilterClick = (category) => {
