@@ -63,11 +63,14 @@ const Resume = () => {
           { place: "British School of Gran Canaria", date: "2006 — 2021", description: "A Levels in Spanish, Chemistry, Mathematics" }
         ],
         workExperience: [
+          { work: "xTech Analyst", place: "BIP Spain", date: "September 2025", description: "React Native, Next.js, Typescript, Tailwind CSS, Zustand, Gitlab, Jira" },
           { work: "Frontend Developer", place: "Lãberit", date: "September 2024 — April 2025", description: "Angular, Figma, Python Flask, MySQL, SCSS, HTML, JavaScript" },
           { work: "Frontend Developer Intern", place: "Lãberit", date: "June 2024 — August 2024", description: "Angular, Figma, Python Flask, MySQL, SCSS, HTML, JavaScript" },
           { work: "Consultant & Application Developer", place: "TICWAY", date: "September 2023 — July 2024", description: "React, Next.JS, Microsoft SQL Server, PowerBI, Python" },
         ],
         courses: [
+          { work: "Introduction to AWS", place: "Udemy", date: "October 2025", description: "AWS Fundamentals" },
+          { work: "React Native", place: "Udemy", date: "October 2025", description: "React Native" },
           { work: "PHP for Beginners", place: "Great Learning Academy", date: "April 2024", description: "PHP" },
           { work: "Introduction to Generative AI", place: "Google Cloud Skills Boost", date: "April 2024" },
           { work: "Front End Development Libraries", place: "freeCodeCamp", date: "April 2024", description: "HTML, JavaScript, CSS, React, Bootstrap" },
@@ -93,11 +96,14 @@ const Resume = () => {
           { place: "British School of Gran Canaria", date: "2006 — 2021", description: "A Levels en Lengua Castellaña, Química, Matemáticas" }
         ],
         workExperience: [
-          { work: "Desarrolladora Frontend", place: "Lãberit", date: "Septiembre 2024 — Abril 2025", description: "Angular, Figma, Python Flask, MySQL, SCSS, HTML, JavaScript" },
+          { work: "xTech Analyst", place: "BIP Spain", date: "Septiembre 2025", description: "React Native, Next.js, Typescript, Tailwind CSS, Zustand, Gitlab, Jira" },
+          { work: "Desarrolladora Frontend", place: "Lãberit", date: "Septiembre 2024 — Marzo 2025", description: "Angular, Figma, Python Flask, MySQL, SCSS, HTML, JavaScript" },
           { work: "Prácticas Desarrolladora Frontend", place: "Lãberit", date: "Junio 2024 — Agosto 2024", description: "Angular, Figma, Python Flask, MySQL, SCSS, HTML, JavaScript" },
           { work: "Consultora y Desarrolladora de Aplicaciones", place: "TICWAY", date: "Septiembre 2023 — Julio 2024", description: "React, Next.JS, Microsoft SQL Server, PowerBI, Python" },
         ],
         courses: [
+          { work: "Introduction to AWS", place: "Udemy", date: "October 2025", description: "AWS Fundamentals" },
+          { work: "React Native", place: "Udemy", date: "October 2025", description: "React Native" },
           { work: "PHP para Principiantes", place: "Great Learning Academy", date: "Abril 2024", description: "PHP" },
           { work: "Introducción a la IA Generativa", place: "Google Cloud Skills Boost", date: "Abril 2024" },
           { work: "Frameworks Desarrollo Front End", place: "freeCodeCamp", date: "Abril 2024", description: "HTML, JavaScript, CSS, React, Bootstrap" },
