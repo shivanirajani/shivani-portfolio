@@ -216,7 +216,7 @@ const Resume = () => {
             </div>
             <ol className="timeline-list">
               {content[language].timelineItems.volunteering.map((item, index) => (
-                <TimelineItem key={index} {...item} useTechStyle={index === 0} />
+                <TimelineItem key={index} {...item} useTechStyle={false} />
               ))}
             </ol>
           </div>
