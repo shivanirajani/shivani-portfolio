@@ -77,7 +77,7 @@ const Resume = () => {
           { work: "Couch to Coder", place: "Bright Network Academy", date: "August 2023 — September 2023", description: "Python" }
         ],
         volunteering: [
-          { work: "Web Developer Intern", place: "Venture Validation Lab", date: "March 2025 — Present", description: "Wordpress, Elementor"},
+
           { work: "Peer Mentor for Computer Science", place: "Newcastle University", date: "September 2024 — April 2025", description: "Support the academic and personal development of fresher students by creating an inclusive and engaging environment." },
           { work: "President of Bollywood Dance Society", place: "Newcastle University", date: "September 2024 — May 2025", description: "Leading the society by overseeing and coordinating all activity." },
           { work: "Secretary of Bollywood Dance Society", place: "Newcastle University", date: "September 2023 — August 2024", description: "Oversee the society's email inbox and assist with various administrative responsibilities to ensure smooth operations."}
@@ -110,7 +110,6 @@ const Resume = () => {
           { work: "Couch to Coder", place: "Bright Network Academy", date: "Agosto 2023 — Septiembre 2023", description: "Python" }
         ],
         volunteering: [
-          { work: "Desarrolladora Web", place: "Venture Validation Lab", date: "March 2025 — Presente", description: "Wordpress, Elementor"},
           { work: "Mentor para Estudiantes de Ciencias de la Computación", place: "Newcastle University", date: "Septiembre 2024 — Abril 2025", description: "Apoyo al desarrollo académico y personal de los estudiantes nuevos." },
           { work: "Presidenta de Bollywood Dance Society", place: "Newcastle University", date: "Septiembre 2024 — Mayo 2025", description: "Liderar el equipo, supervisando y coordinando todas sus actividades." },
           { work: "Secretaria de Bollywood Dance Society", place: "Newcastle University", date: "Septiembre 2023 — Agosto 2024", description: "Gestionar la bandeja de entrada del correo electrónico del equipo y apoyar en las tareas administrativas para garantizar su buen funcionamiento." }
